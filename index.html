@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pricelist.digital | Premium Digital Pricelists & Local SEO</title>
+    <!-- Favicon (Moderna SVG ikona usklađena sa bojama brenda) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%2310b981'/%3E%3C/linearGradient%3E%3Crect width='100' height='100' rx='25' fill='url(%23g)'/%3E%3Cpath d='M30 35h40M30 50h40M30 65h25' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        },
+                        darkbg: '#0b0f19',
+                        darkcard: '#161d30',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & Tailwind Play CDN effects -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .glow-effect {
+            position: relative;
+        }
+        .glow-effect::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(to bottom right, rgba(99, 102, 241, 0.4), rgba(16, 185, 129, 0.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        /* Custom Gradient Text fix to prevent browser clipping inside tight line-height containers */
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white">
+
+    <!-- Header / Nav -->
+    <header class="fixed top-0 w-full z-50 bg-darkbg/80 backdrop-blur-md border-b border-gray-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-2">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <div class="bg-gradient-to-tr from-brand-600 to-emerald-500 p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl shadow-lg shadow-brand-500/20">
+                    <svg class="w-4 h-4 sm:w-6 sm:h-6 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <span class="text-base sm:text-xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-200 to-gray-400">pricelist<span class="text-brand-500">.digital</span></span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#zasto" data-translate="nav_why" class="hover:text-white transition-colors">Why Digital?</a>
+                <a href="#kako" class="nav_how" data-translate="nav_how">How It Works</a>
+                <a href="#klijenti" class="hover:text-white transition-colors" data-translate="nav_clients">Clients</a>
+                <a href="#cijene" class="hover:text-white transition-colors" data-translate="nav_pricing">Pricing</a>
+                <a href="#faq" class="hover:text-white transition-colors" data-translate="nav_faq">FAQ</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-4">
+                <!-- Sleek Language Switcher -->
+                <div class="relative inline-block text-left">
+                    <select id="langSwitcher" onchange="changeLanguage(this.value)" class="bg-gray-950 border border-gray-800 text-xs text-gray-300 rounded-lg px-2 py-1.5 focus:outline-none focus:border-brand-500 cursor-pointer">
+                        <option value="en">🇬🇧 EN (£)</option>
+                        <option value="de">🇩🇪 DE (€)</option>
+                        <option value="sl">🇸🇮 SL (€)</option>
+                    </select>
+                </div>
+
+                <a href="#narudzba" id="btn_create_header" data-translate="btn_create_header" class="inline-flex items-center justify-center px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-lg sm:rounded-xl text-xs sm:text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 active:scale-95 transition duration-150 shadow-lg shadow-brand-500/20 whitespace-nowrap">
+                    Create Now
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 overflow-hidden">
+        <!-- Background Gradients -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-brand-600/10 blur-[140px] rounded-full pointer-events-none"></div>
+        <div class="absolute -top-40 right-10 w-72 h-72 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content -->
+                <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                    <div data-translate="hero_badge" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-semibold uppercase tracking-wider">
+                        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Full Integration with Google Business Profile
+                    </div>
+                    
+                    <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-normal sm:leading-snug lg:leading-normal">
+                        Your pricelist on the <br class="hidden sm:inline">
+                        <span class="gradient-text py-2">first page of Google</span>
+                    </h1>
+                    
+                    <p data-translate="hero_subtitle" class="text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0">
+                        Turn your paper or slow PDF menu into a super-fast, SEO-optimized digital pricelist. Help clients find you instantly and let search engines index your entire offer.
+                    </p>
+
+                    <!-- Proof Points Badges -->
+                    <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs text-gray-400">
+                        <span class="flex items-center gap-1.5 px-3 py-1 bg-gray-900/50 rounded-lg border border-gray-800">
+                            <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            <span data-translate="hero_proof_1">No monthly subscriptions</span>
+                        </span>
+                        <span class="flex items-center gap-1.5 px-3 py-1 bg-gray-900/50 rounded-lg border border-gray-800">
+                            <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            <span data-translate="hero_proof_2">Delivery in 48 hours</span>
+                        </span>
+                        <span class="flex items-center gap-1.5 px-3 py-1 bg-gray-900/50 rounded-lg border border-gray-800">
+                            <svg class="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path></svg>
+                            <span id="hero-proof-price">One-off £199</span>
+                        </span>
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#narudzba" data-translate="hero_cta" class="w-full sm:w-auto text-center px-8 py-4 rounded-xl text-base font-bold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 shadow-xl shadow-brand-500/20 hover:shadow-brand-500/30 transition duration-150 active:scale-95">
+                            Start Your Project
+                        </a>
+                        <a href="#kako" data-translate="hero_learn" class="w-full sm:w-auto text-center px-8 py-4 rounded-xl text-base font-semibold text-gray-300 bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-700 transition duration-150">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Live Preview Mockup / Interactive UI Element -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-brand-500 to-emerald-500 rounded-[2.5rem] blur-2xl opacity-30"></div>
+                    
+                    <!-- Smartphone frame mockup simulated with Tailwind -->
+                    <div class="relative mx-auto max-w-[280px] sm:max-w-[310px] bg-black p-4 rounded-[2.5rem] border-[6px] border-gray-800 shadow-2xl">
+                        <!-- Camera notch -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-b-2xl z-20 flex items-center justify-around px-4">
+                            <span class="w-2.5 h-2.5 rounded-full bg-gray-900 border border-gray-800"></span>
+                            <span class="w-10 h-1 bg-gray-900 rounded"></span>
+                        </div>
+                        
+                        <!-- Internal screen simulation of a digital pricelist (e.g. rustiqe.online) -->
+                        <div class="bg-gray-950 text-white rounded-[1.8rem] overflow-hidden min-h-[500px] flex flex-col justify-between text-sm">
+                            <div class="relative bg-gradient-to-b from-gray-900 to-gray-950 px-4 pt-8 pb-4 border-b border-gray-800">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span data-translate="mockup_demo" class="text-xs text-gray-400">Pricelist Demo</span>
+                                    <span data-translate="mockup_active" class="px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-semibold">Active</span>
+                                </div>
+                                <h4 class="text-lg font-bold text-white tracking-tight">RUSTIQE Restaurant</h4>
+                                <p id="mockup-address" class="text-xs text-gray-500">King Street, Manchester</p>
+                            </div>
+
+                            <!-- Menu Items list in the mockup -->
+                            <div class="p-4 flex-grow space-y-4 overflow-y-auto max-h-[300px]">
+                                <div class="space-y-3">
+                                    <span data-translate="mockup_course" class="text-[11px] font-bold text-brand-400 uppercase tracking-widest block">Main Course</span>
+                                    
+                                    <div class="flex justify-between items-start gap-2 border-b border-gray-900 pb-2">
+                                        <div>
+                                            <h5 data-translate="mockup_item_1_title" class="font-medium text-xs text-white">Rustiqe Ribeye Steak</h5>
+                                            <p data-translate="mockup_item_1_desc" class="text-[10px] text-gray-500">Baby potatoes, mushroom sauce, fresh rosemary</p>
+                                        </div>
+                                        <span id="mockup-price-1" class="font-bold text-xs text-emerald-400">£18.50</span>
+                                    </div>
+
+                                    <div class="flex justify-between items-start gap-2 border-b border-gray-900 pb-2">
+                                        <div>
+                                            <h5 data-translate="mockup_item_2_title" class="font-medium text-xs text-white">Homemade Pasta Carbonara</h5>
+                                            <p data-translate="mockup_item_2_desc" class="text-[10px] text-gray-500">Pancetta, egg yolk, parmesan, cracked black pepper</p>
+                                        </div>
+                                        <span id="mockup-price-2" class="font-bold text-xs text-emerald-400">£12.00</span>
+                                    </div>
+                                    
+                                    <span data-translate="mockup_beverages" class="text-[11px] font-bold text-brand-400 uppercase tracking-widest block pt-2">Beverages</span>
+                                    
+                                    <div class="flex justify-between items-start gap-2 border-b border-gray-900 pb-2">
+                                        <div>
+                                            <h5 data-translate="mockup_item_3_title" class="font-medium text-xs text-white">Fresh Raspberry Cordial</h5>
+                                            <p data-translate="mockup_item_3_desc" class="text-[10px] text-gray-500">100% natural locally sourced handpicked berries</p>
+                                        </div>
+                                        <span id="mockup-price-3" class="font-bold text-xs text-emerald-400">£4.50</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer of mockup -->
+                            <div class="bg-gray-900/50 p-3 text-center border-t border-gray-950 text-[10px] text-gray-400">
+                                <span data-translate="mockup_powered">Powered by:</span> <span class="text-brand-400 font-bold">pricelist.digital</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem & Solution (Before/After) -->
+    <section id="zasto" class="py-20 border-t border-gray-900/60 relative bg-darkbg/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 data-translate="prob_title" class="text-3xl sm:text-4xl font-extrabold text-white">Why is the old way hurting your revenue?</h2>
+                <p data-translate="prob_subtitle" class="text-gray-400 mt-4 text-base">Most cafes, restaurants, and salons upload blurry menu photos or heavy PDFs to their Google Profile. Here is why you are losing customers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <!-- Bad Practice Card -->
+                <div class="bg-gray-900/30 rounded-2xl border border-red-500/10 p-8 flex flex-col justify-between hover:border-red-500/20 transition-all duration-300">
+                    <div>
+                        <div class="bg-red-500/10 p-3 rounded-xl w-fit text-red-400 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="prob_bad_title" class="text-xl font-bold text-white mb-4">Bad Practice: Photos and PDF Files</h3>
+                        <ul class="space-y-3.5 text-gray-400 text-sm">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-red-500 font-bold text-base mt-0.5">✕</span>
+                                <span data-translate="prob_bad_list_1"><strong>Frustrating Zooming:</strong> Text is too small, blurry, and hard to read on mobile screens.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-red-500 font-bold text-base mt-0.5">✕</span>
+                                <span data-translate="prob_bad_list_2"><strong>Invisible to Google:</strong> Search engines cannot read text inside images. Your "best burger" is just a bunch of pixels to Google.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-red-500 font-bold text-base mt-0.5">✕</span>
+                                <span data-translate="prob_bad_list_3"><strong>Complicated Updates:</strong> Every price change requires re-printing, photographing, and re-uploading.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-translate="prob_bad_footer" class="mt-8 pt-6 border-t border-gray-800/40 text-red-400/80 text-xs font-semibold">
+                        Losing up to 30% of potential visitors from Google Maps.
+                    </div>
+                </div>
+
+                <!-- Good Practice Card -->
+                <div class="bg-gradient-to-br from-brand-950/20 to-darkcard rounded-2xl border border-emerald-500/20 p-8 flex flex-col justify-between hover:border-emerald-500/40 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/5 blur-3xl rounded-full"></div>
+                    <div>
+                        <div class="bg-emerald-500/10 p-3 rounded-xl w-fit text-emerald-400 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 data-translate="prob_good_title" class="text-xl font-bold text-white mb-4">The Solution: pricelist.digital Menus</h3>
+                        <ul class="space-y-3.5 text-gray-400 text-sm">
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-emerald-400 font-bold text-base mt-0.5">✓</span>
+                                <span data-translate="prob_good_list_1"><strong>Ultra Fast &amp; Responsive:</strong> Your menu loads in milliseconds, perfectly optimized for every mobile screen.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-emerald-400 font-bold text-base mt-0.5">✓</span>
+                                <span data-translate="prob_good_list_2"><strong>Powerful Local SEO:</strong> Google reads every item name and price. When someone searches for a specific service in your city, you rank on top.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <span class="text-emerald-400 font-bold text-base mt-0.5">✓</span>
+                                <span data-translate="prob_good_list_3"><strong>One Permanent Address:</strong> A permanent link on your own custom domain that is easy to share.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-translate="prob_good_footer" class="mt-8 pt-6 border-t border-gray-800/40 text-emerald-400 text-xs font-semibold">
+                        Guaranteed higher visibility on local Google searches.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Rezultati nakon prelaska na digitalni cjenovnik (Growth System Positioning) -->
+    <section class="py-20 border-t border-gray-900/60 relative overflow-hidden bg-gradient-to-b from-darkbg via-brand-950/10 to-darkbg">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-80 bg-brand-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span data-translate="res_badge" class="text-xs font-bold uppercase tracking-wider text-brand-400 bg-brand-500/10 px-3 py-1.5 rounded-full border border-brand-500/20">Local Growth Engine</span>
+                <h2 data-translate="res_title" class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Results after switching to our digital pricelist</h2>
+                <p class="text-gray-400 mt-4 text-base" data-translate="res_subtitle">Our system doesn't just change how your menu looks – it dramatically accelerates your local business growth and optimizes your online presence.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Stat 1 -->
+                <div class="bg-darkcard/80 border border-gray-800/80 rounded-2xl p-6 text-center hover:border-brand-500/30 transition duration-300 relative group">
+                    <div class="text-4xl sm:text-5xl font-black text-brand-400 mb-2 group-hover:scale-105 transition-transform">+63%</div>
+                    <h4 data-translate="res_stat_1_title" class="text-base font-bold text-white mb-1">More profile clicks</h4>
+                    <p data-translate="res_stat_1_desc" class="text-xs text-gray-500">Increased interaction and visitor clicks from Google Maps straight to your menu.</p>
+                </div>
+                <!-- Stat 2 -->
+                <div class="bg-darkcard/80 border border-gray-800/80 rounded-2xl p-6 text-center hover:border-brand-500/30 transition duration-300 relative group">
+                    <div class="text-4xl sm:text-5xl font-black text-emerald-400 mb-2 group-hover:scale-105 transition-transform">+41%</div>
+                    <h4 data-translate="res_stat_2_title" class="text-base font-bold text-white mb-1">More phone calls</h4>
+                    <p data-translate="res_stat_2_desc" class="text-xs text-gray-500">Direct bookings, inquiries, and table reservations right after viewing the pricelist.</p>
+                </div>
+                <!-- Stat 3 -->
+                <div class="bg-darkcard/80 border border-gray-800/80 rounded-2xl p-6 text-center hover:border-brand-500/30 transition duration-300 relative group">
+                    <div class="text-4xl sm:text-5xl font-black text-indigo-400 mb-2 group-hover:scale-105 transition-transform">+2.1x</div>
+                    <h4 data-translate="res_stat_3_title" class="text-base font-bold text-white mb-1">More Google Maps views</h4>
+                    <p data-translate="res_stat_3_desc" class="text-xs text-gray-500">Google ranks you higher in local searches because you have a fast, readable website linked.</p>
+                </div>
+                <!-- Stat 4 -->
+                <div class="bg-darkcard/80 border border-gray-800/80 rounded-2xl p-6 text-center hover:border-brand-500/30 transition duration-300 relative group">
+                    <div class="text-4xl sm:text-5xl font-black text-purple-400 mb-2 group-hover:scale-105 transition-transform">120+</div>
+                    <h4 data-translate="res_stat_4_title" class="text-base font-bold text-white mb-1">Indexed items</h4>
+                    <p data-translate="res_stat_4_desc" class="text-xs text-gray-500">All your dishes, drinks, or services become searchable keywords indexed on Google.</p>
+                </div>
+            </div>
+
+            <!-- Disclaimer explaining early estimates -->
+            <div class="mt-8 text-center">
+                <span data-translate="res_disclaimer" class="text-[11px] text-gray-600 bg-gray-950/40 px-4 py-2 rounded-full border border-gray-900">
+                    * Data represents early estimates and test results of active user profiles.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Search Examples (Lokalni Biznis Mindset Activation) -->
+    <section class="py-20 bg-darkbg border-t border-gray-900/60 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left column description -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div data-translate="search_badge" class="text-brand-400 text-sm font-bold tracking-wider uppercase">What are people searching for?</div>
+                    <h2 id="search-title-heading" class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+                        Your offer is invisible on searches. <br>
+                        <span class="gradient-text py-1">It's time to change that.</span>
+                    </h2>
+                    <p data-translate="search_desc" class="text-gray-400 text-base leading-relaxed">
+                        When potential customers search for food or services in your town, Google scans text. If your pricelist is a photo or a PDF, you are invisible to search engines. 
+                    </p>
+                    <p id="search-alert-box" class="text-base font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4">
+                        💡 With our system, every single dish, drink, or treatment becomes readable. When customers search – Google can finally find YOUR offer!
+                    </p>
+                </div>
+
+                <!-- Right column simulated search examples -->
+                <div class="lg:col-span-6 space-y-4">
+                    <h4 data-translate="search_heading" class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-2">Examples of local searches:</h4>
+                    
+                    <!-- Search pill 1 -->
+                    <div class="bg-darkcard border border-gray-800 rounded-xl p-4 flex items-center justify-between hover:border-brand-500/40 transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-gray-500 text-sm font-mono">1.</span>
+                            <div>
+                                <div data-translate="search_label" class="text-xs text-gray-500">Customer search:</div>
+                                <div id="search-pill-1" class="text-sm font-bold text-white">"pizza manchester"</div>
+                            </div>
+                        </div>
+                        <span data-translate="search_found" class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-semibold">Found Instantly ✓</span>
+                    </div>
+
+                    <!-- Search pill 2 -->
+                    <div class="bg-darkcard border border-gray-800 rounded-xl p-4 flex items-center justify-between hover:border-brand-500/40 transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-gray-500 text-sm font-mono">2.</span>
+                            <div>
+                                <div data-translate="search_label" class="text-xs text-gray-500">Customer search:</div>
+                                <div id="search-pill-2" class="text-sm font-bold text-white">"espresso leeds"</div>
+                            </div>
+                        </div>
+                        <span data-translate="search_found" class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-semibold">Found Instantly ✓</span>
+                    </div>
+
+                    <!-- Search pill 3 -->
+                    <div class="bg-darkcard border border-gray-800 rounded-xl p-4 flex items-center justify-between hover:border-brand-500/40 transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-gray-500 text-sm font-mono">3.</span>
+                            <div>
+                                <div data-translate="search_label" class="text-xs text-gray-500">Customer search:</div>
+                                <div id="search-pill-3" class="text-sm font-bold text-white">"burger birmingham"</div>
+                            </div>
+                        </div>
+                        <span data-translate="search_found" class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-semibold">Found Instantly ✓</span>
+                    </div>
+
+                    <!-- Search pill 4 -->
+                    <div class="bg-darkcard border border-gray-800 rounded-xl p-4 flex items-center justify-between hover:border-brand-500/40 transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-gray-500 text-sm font-mono">4.</span>
+                            <div>
+                                <div data-translate="search_label" class="text-xs text-gray-500">Customer search:</div>
+                                <div id="search-pill-4" class="text-sm font-bold text-white">"hair salon bristol"</div>
+                            </div>
+                        </div>
+                        <span data-translate="search_found" class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-semibold">Found Instantly ✓</span>
+                    </div>
+
+                    <!-- Search pill 5 -->
+                    <div class="bg-darkcard border border-gray-800 rounded-xl p-4 flex items-center justify-between hover:border-brand-500/40 transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-gray-500 text-sm font-mono">5.</span>
+                            <div>
+                                <div data-translate="search_label" class="text-xs text-gray-500">Customer search:</div>
+                                <div id="search-pill-5" class="text-sm font-bold text-white">"best steak"</div>
+                            </div>
+                        </div>
+                        <span data-translate="search_found" class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded font-semibold">Found Instantly ✓</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO & Business Impact Explanation Section -->
+    <section class="py-20 relative overflow-hidden bg-darkbg/50 border-t border-gray-900/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- SEO Explanation Visual / Card -->
+                <div class="space-y-6 lg:pr-8">
+                    <div data-translate="search_badge" class="text-brand-400 text-sm font-bold tracking-wider uppercase">Search Impact &amp; SEO</div>
+                    <h2 data-translate="seo_expl_title" class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">How does your digital pricelist actually bring in new customers?</h2>
+                    
+                    <div class="space-y-6 text-gray-400 text-base">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 bg-brand-500/10 p-2.5 rounded-lg h-11 w-11 flex items-center justify-center text-brand-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 data-translate="seo_expl_1_title" class="font-bold text-white text-lg">Keyword Indexing</h4>
+                                <p id="seo-expl-1-desc" class="mt-1 text-sm">If you run a beauty salon offering "laser hair removal", that term must exist as raw text code. Google crawls your domain and indexes it instantly.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 bg-emerald-500/10 p-2.5 rounded-lg h-11 w-11 flex items-center justify-center text-emerald-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 data-translate="seo_expl_2_title" class="font-bold text-white text-lg">Local SEO Authority</h4>
+                                <p data-translate="seo_expl_2_desc" class="mt-1 text-sm">Google loves when your Business Profile links to a fast, modern, HTTPS-secured website containing your actual services. This boosts your entire local ranking on the maps.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 bg-indigo-500/10 p-2.5 rounded-lg h-11 w-11 flex items-center justify-center text-indigo-400">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 data-translate="seo_expl_3_title" class="font-bold text-white text-lg">Higher Conversion Rate</h4>
+                                <p data-translate="seo_expl_3_desc" class="mt-1 text-sm">Customers make decisions faster. When they see a clear, responsive menu on Google Maps that opens instantly, the booking rate increases by over 42%.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Search Engine Card -->
+                <div class="bg-darkcard border border-gray-800 rounded-2xl p-6 sm:p-8 relative">
+                    <div class="absolute -top-6 -left-6 bg-indigo-600/10 border border-indigo-500/20 px-4 py-2 rounded-xl text-xs font-semibold text-indigo-400" data-translate="mockup_preview_badge">
+                        Interactive Preview
+                    </div>
+                    
+                    <h3 data-translate="seo_see_title" class="text-xl font-bold text-white mb-6">How Google Sees It</h3>
+                    
+                    <div class="space-y-4">
+                        <!-- Simulated Google Search Input -->
+                        <div class="bg-gray-950 px-4 py-3 rounded-xl border border-gray-800 flex items-center gap-3">
+                            <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                            <span id="search-input-placeholder" class="text-xs text-gray-300">best steak restaurant near me</span>
+                        </div>
+
+                        <!-- Simulated Search Result -->
+                        <div class="bg-gray-950/50 p-4 rounded-xl border border-gray-900 space-y-2">
+                            <div class="text-[10px] text-emerald-400 flex items-center gap-1">
+                                <span>https://rustiqe.online</span>
+                                <span class="text-gray-600">•</span>
+                                <span data-translate="seo_profile_label" class="text-gray-500">Google Business Profile</span>
+                            </div>
+                            <h4 id="seo-result-title" class="text-sm font-semibold text-brand-400 hover:underline cursor-pointer">Rustiqe Restaurant &amp; Steak House - Manchester</h4>
+                            <p id="seo-result-snippet" class="text-xs text-gray-400 leading-relaxed">
+                                ...Enjoy premium cuts. Our <strong class="text-white">Rustiqe Ribeye Steak</strong> for £18.50 is prepared using a traditional recipe... Find our full menu on our digital pricelist.
+                            </p>
+                        </div>
+
+                        <!-- Google Crawl Analysis representation -->
+                        <div class="mt-6 pt-6 border-t border-gray-800 space-y-2">
+                            <span data-translate="seo_analysis_status" class="text-xs font-bold text-gray-400 block uppercase tracking-wider">Traffic Analysis Status:</span>
+                            <div class="grid grid-cols-3 gap-2 text-center">
+                                <div class="bg-gray-950 p-2.5 rounded-lg border border-gray-900">
+                                    <div class="text-xs text-emerald-400 font-bold">100/100</div>
+                                    <div data-translate="seo_speed_label" class="text-[10px] text-gray-500 mt-1">SEO Speed</div>
+                                </div>
+                                <div class="bg-gray-950 p-2.5 rounded-lg border border-gray-900">
+                                    <div class="text-xs text-emerald-400 font-bold">98%</div>
+                                    <div data-translate="seo_readability_label" class="text-[10px] text-gray-500 mt-1">Readability</div>
+                                </div>
+                                <div class="bg-gray-950 p-2.5 rounded-lg border border-gray-900">
+                                    <div class="text-xs text-emerald-400 font-bold">+2.4x</div>
+                                    <div data-translate="seo_ranking_label" class="text-[10px] text-gray-500 mt-1">Ranking</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Domain Strategy Builder -->
+    <section class="py-20 bg-darkbg border-t border-b border-gray-900/60 relative">
+        <div class="absolute inset-0 bg-brand-950/5 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span data-translate="interactive_badge" class="text-xs font-bold uppercase tracking-wider text-brand-400 bg-brand-500/10 px-3 py-1.5 rounded-full border border-brand-500/20">Interactive Tool</span>
+                <h2 data-translate="interactive_title" class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Which domain strategy is perfect for you?</h2>
+                <p data-translate="interactive_subtitle" class="text-gray-400 mt-3 text-base">Enter your business details to see which strategy fits your growth goals.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-darkcard rounded-3xl border border-gray-800 p-6 sm:p-10 shadow-2xl">
+                <!-- Inputs grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div>
+                        <label data-translate="interactive_label_name" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your Business Name</label>
+                        <input type="text" id="sim-biz-name" value="Bella Vista" placeholder="e.g. Bella Vista" class="w-full bg-gray-950 border border-gray-800 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl px-4 py-3 text-sm text-white transition">
+                    </div>
+                    <div>
+                        <label data-translate="interactive_label_city" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Your City / Location</label>
+                        <input type="text" id="sim-biz-city" value="Manchester" placeholder="e.g. London" class="w-full bg-gray-950 border border-gray-800 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl px-4 py-3 text-sm text-white transition">
+                    </div>
+                    <div>
+                        <label data-translate="interactive_label_type" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Business Type</label>
+                        <select id="sim-biz-type" class="w-full bg-gray-950 border border-gray-800 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl px-4 py-3 text-sm text-white transition">
+                            <option value="restoran" data-translate="interactive_opt_restaurant">Restaurant / Pizzeria</option>
+                            <option value="salon" data-translate="interactive_opt_salon">Beauty &amp; Hair Salon</option>
+                            <option value="bar" data-translate="interactive_opt_bar">Cafe Bar / Pub</option>
+                            <option value="dental" data-translate="interactive_opt_dental">Dental &amp; Aesthetic Clinic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center mb-8">
+                    <button onclick="generateDomainSuggestions()" data-translate="interactive_btn_generate" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-darkbg font-bold transition duration-150 active:scale-95 text-sm">
+                        Generate Domain Suggestions
+                    </button>
+                </div>
+
+                <!-- Simulation Output -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <!-- Option Brand -->
+                    <div class="bg-gray-950 p-6 rounded-2xl border border-gray-900 hover:border-brand-500/30 transition duration-300">
+                        <div class="flex items-center justify-between mb-4">
+                            <span data-translate="interactive_brand_orientation" class="px-2.5 py-1 rounded-md bg-brand-500/10 text-brand-400 text-xs font-bold uppercase tracking-wider">Brand Orientation</span>
+                            <span class="text-xs text-gray-500">Name Recognition</span>
+                        </div>
+                        <div class="text-sm sm:text-lg font-mono font-bold text-white mb-2 break-all" id="brand-domain-output">bellavista.co.uk</div>
+                        <p data-translate="interactive_brand_desc" class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Focuses entirely on your business name. Perfect for sharing on social media, printed QR codes, and overall brand recognition.
+                        </p>
+                        <div data-translate="interactive_brand_best" class="text-xs text-emerald-400 font-medium">✓ Best for: Established brands and local landmarks.</div>
+                    </div>
+
+                    <!-- Option SEO -->
+                    <div class="bg-gray-950 p-6 rounded-2xl border border-gray-900 hover:border-emerald-500/30 transition duration-300">
+                        <div class="flex items-center justify-between mb-4">
+                            <span data-translate="interactive_seo_orientation" class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase tracking-wider">SEO Orientation</span>
+                            <span class="text-xs text-gray-500">New Client Acquisition</span>
+                        </div>
+                        <div class="text-sm sm:text-lg font-mono font-bold text-white mb-2 break-all" id="seo-domain-output">restaurantbellavistamanchester.co.uk</div>
+                        <p data-translate="interactive_seo_desc" class="text-xs text-gray-400 leading-relaxed mb-4">
+                            Focuses on keywords people actively search on Google in your city. Speeds up local map ranking and attracts new discovery searches.
+                        </p>
+                        <div data-translate="interactive_seo_best" class="text-xs text-emerald-400 font-medium">✓ Best for: Capturing highly intent-driven search traffic.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-World Showcase (Our Portfolio / proof-of-concept) -->
+    <section id="klijenti" class="py-20 relative overflow-hidden bg-darkbg/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span data-translate="proven_badge" class="text-xs font-bold uppercase tracking-wider text-brand-400">Our Proven Concept</span>
+                <h2 data-translate="proven_title" class="text-3xl sm:text-4xl font-extrabold text-white mt-4">See real-world examples</h2>
+                <p data-translate="proven_subtitle" class="text-gray-400 mt-4 text-base">We've helped businesses transform their digital presence. Click the links below to test the speed and responsiveness.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- namastewien.com -->
+                <div class="bg-darkcard rounded-2xl border border-gray-800/80 p-6 flex flex-col justify-between hover:scale-[1.02] transition duration-300">
+                    <div>
+                        <div data-translate="proven_card_1_type" class="text-xs text-brand-400 font-semibold mb-2">Indian Restaurant</div>
+                        <h4 class="text-xl font-bold text-white mb-2">namastewien.com</h4>
+                        <p data-translate="proven_card_1_desc" class="text-xs text-gray-400 leading-relaxed">
+                            Premium digital menu for a highly-rated Indian restaurant in Vienna. Guests browse traditional dishes and drinks instantly without downloading heavy PDF files.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400">SEO Optimized</span>
+                        <a href="https://namastewien.com" target="_blank" class="text-xs text-brand-400 font-bold hover:underline flex items-center gap-1">
+                            <span data-translate="proven_card_1_visit">Visit website</span>
+                            <svg class="w-3.5 h-3.5 inline-block" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- caffebardoboj.com -->
+                <div class="bg-darkcard rounded-2xl border border-gray-800/80 p-6 flex flex-col justify-between hover:scale-[1.02] transition duration-300">
+                    <div>
+                        <div data-translate="proven_card_2_type" class="text-xs text-brand-400 font-semibold mb-2">Cafe Bar &amp; Lounge</div>
+                        <h4 class="text-xl font-bold text-white mb-2">caffebardoboj.com</h4>
+                        <p data-translate="proven_card_2_desc" class="text-xs text-gray-400 leading-relaxed">
+                            A complete wine list and beverage selection integrated onto their Google Profile in Doboj, making it easy for customers on the street to find their offerings.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400">Local SEO Focus</span>
+                        <a href="https://caffebardoboj.com" target="_blank" class="text-xs text-brand-400 font-bold hover:underline flex items-center gap-1">
+                            <span data-translate="proven_card_1_visit">Visit website</span>
+                            <svg class="w-3.5 h-3.5 inline-block" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- rustiqe.online -->
+                <div class="bg-darkcard rounded-2xl border border-gray-800/80 p-6 flex flex-col justify-between hover:scale-[1.02] transition duration-300">
+                    <div>
+                        <div data-translate="proven_card_3_type" class="text-xs text-brand-400 font-semibold mb-2">Restaurant &amp; Grill</div>
+                        <h4 class="text-xl font-bold text-white mb-2">rustiqe.online</h4>
+                        <p data-translate="proven_card_3_desc" class="text-xs text-gray-400 leading-relaxed">
+                            A fully loaded menu on a lightning-fast custom domain for a restaurant in Doboj. Every dish is fully indexed and perfectly optimized for mobile.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400">Brand Oriented</span>
+                        <a href="https://rustiqe.online" target="_blank" class="text-xs text-brand-400 font-bold hover:underline flex items-center gap-1">
+                            <span data-translate="proven_card_1_visit">Visit website</span>
+                            <svg class="w-3.5 h-3.5 inline-block" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it Works (3 Easy Steps) -->
+    <section id="kako" class="py-20 border-t border-gray-900/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span data-translate="process_badge" class="text-xs font-bold uppercase tracking-wider text-brand-400">Simple Process</span>
+                <h2 data-translate="process_title" class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Your digital pricelist in 3 easy steps</h2>
+                <p data-translate="process_subtitle" class="text-gray-400 mt-4 text-base">We've completely simplified the launch process to save your precious business hours.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                <!-- Step 1 -->
+                <div class="bg-darkcard border border-gray-800 rounded-2xl p-8 relative">
+                    <div class="absolute -top-5 left-8 bg-brand-600 text-white font-black rounded-xl h-10 w-10 flex items-center justify-center text-lg shadow-lg">1</div>
+                    <h3 data-translate="process_step_1_title" class="text-xl font-bold text-white mt-4 mb-3">Snap &amp; Send</h3>
+                    <p data-translate="process_step_1_desc" class="text-xs text-gray-400 leading-relaxed">
+                        Just take a photo of your current paper menu or send us a PDF. Our team takes care of digitizing, formatting, and styling it in your brand colors.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-darkcard border border-gray-800 rounded-2xl p-8 relative">
+                    <div class="absolute -top-5 left-8 bg-brand-600 text-white font-black rounded-xl h-10 w-10 flex items-center justify-center text-lg shadow-lg">2</div>
+                    <h3 data-translate="process_step_2_title" class="text-xl font-bold text-white mt-4 mb-3">Choose the Perfect Domain</h3>
+                    <p data-translate="process_step_2_desc" class="text-xs text-gray-400 leading-relaxed">
+                        Decide on an SEO-focused domain for maximum reach or a BRAND domain for brand strength.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-darkcard border border-gray-800 rounded-2xl p-8 relative">
+                    <div class="absolute -top-5 left-8 bg-emerald-500 text-darkbg font-black rounded-xl h-10 w-10 flex items-center justify-center text-lg shadow-lg">3</div>
+                    <h3 data-translate="process_step_3_title" class="text-xl font-bold text-white mt-4 mb-3">Connect &amp; Launch</h3>
+                    <p data-translate="process_step_3_desc" class="text-xs text-gray-400 leading-relaxed">
+                        Within 48 hours, we build the pricelist, install the SSL certificate, deploy it to cloud hosting, and integrate the link directly onto your Google Profile.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Pricing & Package Configurator (Upsells) -->
+    <section id="cijene" class="py-20 bg-darkbg border-t border-gray-900/60 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span data-translate="pricing_badge" class="text-xs font-bold uppercase tracking-wider text-emerald-400">Transparent Pricing</span>
+                <h2 data-translate="pricing_title" class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Simple Pricing, No Hidden Subscriptions</h2>
+                <p data-translate="pricing_subtitle" class="text-gray-400 mt-4 text-base">The basic setup and deployment of your digital pricelist is a flat, one-off fee, and we offer optional growth-booster add-ons.</p>
+            </div>
+
+            <!-- Pricing Configurator Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch max-w-5xl mx-auto">
+                
+                <!-- Package details list -->
+                <div class="lg:col-span-7 bg-darkcard rounded-3xl border border-gray-800 p-8 flex flex-col justify-between">
+                    <div>
+                        <h3 data-translate="pricing_card_left_title" class="text-2xl font-bold text-white mb-2">What's included in the basic package?</h3>
+                        <p data-translate="pricing_card_left_subtitle" class="text-xs text-gray-400 mb-6">Everything you need for a complete digital launch and permanent web presence.</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-300">
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-emerald-400">✓</span>
+                                <div>
+                                    <h5 data-translate="pricing_feature_1_title" class="font-bold text-white">Complete Setup</h5>
+                                    <p data-translate="pricing_feature_1_desc" class="text-xs text-gray-500">Manual input of up to 150 items from your photos.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-emerald-400">✓</span>
+                                <div>
+                                    <h5 data-translate="pricing_feature_2_title" class="font-bold text-white">Fast &amp; Secure Hosting</h5>
+                                    <p data-translate="pricing_feature_2_desc" class="text-xs text-gray-500">Your first year of high-speed hosting is completely free.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-emerald-400">✓</span>
+                                <div>
+                                    <h5 data-translate="pricing_feature_3_title" class="font-bold text-white">Domain of Choice</h5>
+                                    <p data-translate="pricing_feature_3_desc" class="text-xs text-gray-500">Registration of your BRAND or SEO domain.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-emerald-400">✓</span>
+                                <div>
+                                    <h5 data-translate="pricing_feature_4_title" class="font-bold text-white">SSL (HTTPS) Certificate</h5>
+                                    <p data-translate="pricing_feature_4_desc" class="text-xs text-gray-500">Secure padlock connection for maximum trust.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-emerald-400">✓</span>
+                                <div>
+                                    <h5 data-translate="pricing_feature_5_title" class="font-bold text-white">Google Maps Integration</h5>
+                                    <p data-translate="pricing_feature_5_desc" class="text-xs text-gray-500">Linking the pricelist directly to your Google Profile.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2.5">
+                                <span class="text-emerald-400">✓</span>
+                                <div>
+                                    <h5 data-translate="pricing_feature_6_title" class="font-bold text-white">Domain Renewal Only</h5>
+                                    <p data-translate="pricing_feature_6_desc" class="text-xs text-gray-500">After year one, pay only standard annual domain renewal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Interactive Addon Toggles -->
+                        <div class="mt-8 pt-8 border-t border-gray-800 space-y-4">
+                            <h4 data-translate="pricing_addon_header" class="text-sm font-bold text-gray-300 uppercase tracking-wider mb-2">Optional Extra Services:</h4>
+                            
+                            <!-- Addon 1 -->
+                            <label class="flex items-center justify-between p-3.5 rounded-xl bg-gray-950 border border-gray-900 cursor-pointer hover:border-brand-500/50 transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="addon-gbp" onchange="updatePriceCalculator()" class="rounded text-brand-600 focus:ring-brand-500 h-4.5 w-4.5 bg-gray-900 border-gray-800">
+                                    <div>
+                                        <div data-translate="pricing_addon_1_title" class="text-sm font-bold text-white">Google Business Profile Optimization</div>
+                                        <div data-translate="pricing_addon_1_desc" class="text-[11px] text-gray-500">Full audit and optimization of descriptions, categories, and photos on maps.</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-bold text-brand-400" id="addon-price-1">+ £99</span>
+                            </label>
+
+                            <!-- Addon 2 -->
+                            <label class="flex items-center justify-between p-3.5 rounded-xl bg-gray-950 border border-gray-900 cursor-pointer hover:border-brand-500/50 transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="addon-nfc" onchange="updatePriceCalculator()" class="rounded text-brand-600 focus:ring-brand-500 h-4.5 w-4.5 bg-gray-900 border-gray-800">
+                                    <div>
+                                        <div data-translate="pricing_addon_2_title" class="text-sm font-bold text-white">NFC &amp; QR Hardware (QuickStar)</div>
+                                        <div data-translate="pricing_addon_2_desc" class="text-[11px] text-gray-500">Physical smart stands and tap cards for instant menu access.</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-bold text-brand-400" id="addon-price-2">+ £49</span>
+                            </label>
+
+                            <!-- Addon 3 -->
+                            <label class="flex items-center justify-between p-3.5 rounded-xl bg-gray-950 border border-gray-900 cursor-pointer hover:border-brand-500/50 transition">
+                                <div class="flex items-center gap-3">
+                                    <input type="checkbox" id="addon-app" onchange="updatePriceCalculator()" class="rounded text-brand-600 focus:ring-brand-500 h-4.5 w-4.5 bg-gray-900 border-gray-800">
+                                    <div>
+                                        <div data-translate="pricing_addon_3_title" class="text-sm font-bold text-white">Custom Interactive Modules</div>
+                                        <div data-translate="pricing_addon_3_desc" class="text-[11px] text-gray-500">Add custom booking modules, reservation forms, or loyalty systems.</div>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-bold text-brand-400" id="addon-price-3">+ £149</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Price Card -->
+                <div class="lg:col-span-5 bg-gradient-to-b from-brand-900/40 to-darkcard rounded-3xl border-2 border-brand-500 p-8 flex flex-col justify-between text-center relative overflow-hidden">
+                    <div data-translate="pricing_card_right_badge" class="absolute top-4 right-4 bg-emerald-500 text-darkbg text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">Best Value</div>
+                    
+                    <div>
+                        <span data-translate="pricing_card_right_title" class="text-sm font-semibold uppercase tracking-wider text-brand-400 block mb-2">Total Cost</span>
+                        
+                        <!-- Main big price display -->
+                        <div class="my-6">
+                            <span class="text-5xl font-black text-white" id="live-total-price">£199</span>
+                            <span data-translate="pricing_card_right_subs" class="text-xs text-gray-400 block mt-2">One-off payment. No contract or monthly fees.</span>
+                        </div>
+
+                        <div class="space-y-3.5 py-6 border-t border-b border-gray-800 text-left text-xs text-gray-400">
+                            <div class="flex justify-between">
+                                <span data-translate="pricing_feature_1_title">Complete Setup</span>
+                                <span class="font-bold text-white" id="live-base-price">£199</span>
+                            </div>
+                            <div class="flex justify-between text-brand-400 hidden" id="itemized-gbp">
+                                <span data-translate="pricing_addon_1_title">+ Google Business Profile Optimization</span>
+                                <span class="font-bold" id="itemized-price-gbp">£99</span>
+                            </div>
+                            <div class="flex justify-between text-brand-400 hidden" id="itemized-nfc">
+                                <span data-translate="pricing_addon_2_title">+ NFC &amp; QR Hardware</span>
+                                <span class="font-bold" id="itemized-price-nfc">£49</span>
+                            </div>
+                            <div class="flex justify-between text-brand-400 hidden" id="itemized-app">
+                                <span data-translate="pricing_addon_3_title">+ Custom Interactive Modules</span>
+                                <span class="font-bold" id="itemized-price-app">£149</span>
+                            </div>
+                        </div>
+
+                        <!-- Partner QuickStar referral info -->
+                        <div data-translate="pricing_card_right_partner" class="text-[10px] text-gray-500 mt-4 text-left leading-relaxed">
+                            💡 NFC and QR accessories (cards, stands, plaques) are delivered in partnership with our store <a href="https://quickstar.store/" target="_blank" class="text-brand-400 underline">QuickStar.store</a>.
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="#narudzba" onclick="populateFormFromCalculator()" data-translate="pricing_card_right_cta" class="block w-full text-center py-4 rounded-xl text-sm font-bold text-darkbg bg-emerald-400 hover:bg-emerald-300 transition duration-150 shadow-lg shadow-emerald-500/10">
+                            Proceed to Order
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead/Order Form Section -->
+    <section id="narudzba" class="py-20 relative overflow-hidden bg-darkbg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left instructions copy -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span data-translate="form_section_badge" class="text-xs font-bold uppercase tracking-wider text-brand-400">Send Inquiry</span>
+                    <h2 data-translate="form_section_title" class="text-3xl sm:text-4xl font-extrabold text-white">Ready to launch your digital menu?</h2>
+                    <p data-translate="form_section_subtitle" class="text-gray-400 text-base leading-relaxed">
+                        Fill out the form below. We will analyze your Google Profile and prepare domain suggestions before we get in touch to collect your menu photos.
+                    </p>
+                    
+                    <div class="p-4 bg-gray-900/40 rounded-xl border border-gray-800 text-xs text-gray-400 space-y-2">
+                        <p data-translate="form_step_header" class="font-semibold text-white">What happens next?</p>
+                        <ol class="list-decimal list-inside space-y-1">
+                            <li data-translate="form_step_1">Your details are recorded in our system.</li>
+                            <li data-translate="form_step_2">We analyze your profile and prepare domain suggestions.</li>
+                            <li data-translate="form_step_3">We contact you to consult and collect your menu photos.</li>
+                        </ol>
+                    </div>
+
+                    <!-- NEW: Free Google Profile SEO analysis box (Strategic Upsell & Consultation positioning) -->
+                    <div class="p-5 bg-gradient-to-r from-brand-900/30 to-indigo-950/30 rounded-2xl border border-brand-500/30 shadow-lg space-y-3 relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-24 h-24 bg-brand-500/10 blur-xl rounded-full"></div>
+                        <div class="flex items-center gap-2">
+                            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
+                            <span data-translate="form_featured_badge" class="text-xs font-black uppercase tracking-widest text-emerald-400">FEATURED / FREE</span>
+                        </div>
+                        <h4 data-translate="form_featured_title" class="text-lg font-bold text-white">Free Google Profile SEO Analysis</h4>
+                        <p data-translate="form_featured_desc" class="text-xs text-gray-400 leading-relaxed">
+                            Submitting this inquiry is <strong>completely free and non-binding</strong>. Your request serves as a preliminary inquiry. Once received, our team will conduct a <strong>detailed SEO audit</strong> of your existing Google Business Profile to map out exactly how to grow your visibility. 
+                        </p>
+                        <p data-translate="form_featured_footer" class="text-[11px] text-brand-300 font-medium leading-relaxed">
+                            💡 Realization, payment, and pricelist creation only start after we do the consultation and you officially approve the project.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Form container -->
+                <div class="lg:col-span-7 bg-darkcard border border-gray-800 rounded-3xl p-6 sm:p-10 relative">
+                    
+                    <!-- Hidden iframe to handle Google Forms redirect in the background (Maintains premium UX) -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+                    <!-- Form target is linked to the hidden iframe. Method must be POST. -->
+                    <form id="orderForm" 
+                          aria-label="Order and Request Form"
+                          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe1geZmjbgd4cRfIqFgCwTher25IHDn1l-Pn7LSazREInZR6Q/formResponse" 
+                          method="POST" 
+                          target="hidden_iframe" 
+                          onsubmit="handleFormSubmit(event)" 
+                          class="space-y-6">
+                        
+                        <!-- Skrivena polja za dodatne usluge i ukupnu cijenu (Automatski se popunjavaju kroz JS) -->
+                        <input type="hidden" id="form-addon-gbp" name="entry.2083816494" value="Ne">
+                        <input type="hidden" id="form-addon-nfc" name="entry.221252908" value="Ne">
+                        <input type="hidden" id="form-addon-app" name="entry.1951972473" value="Ne">
+                        <input type="hidden" id="form-total-price-hidden" name="entry.456203027" value="£199">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label data-translate="form_label_name" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Owner's Full Name</label>
+                                <input type="text" id="form-name" name="entry.2140186513" required class="w-full bg-gray-950 border border-gray-800 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl px-4 py-3 text-sm text-white transition">
+                            </div>
+                            <div>
+                                <label data-translate="form_label_biz" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Business Name</label>
+                                <input type="text" id="form-biz-name" name="entry.333097936" required class="w-full bg-gray-950 border border-gray-800 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl px-4 py-3 text-sm text-white transition">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label data-translate="form_label_phone" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Contact Phone (Viber/WhatsApp)</label>
+                                <input type="tel" id="form-phone" name="entry.835090888" required class="w-full bg-gray-950 border border-gray-800 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl px-4 py-3 text-sm text-white transition">
+                            </div>
+                            <div>
+                                <label data-translate="form_label_email" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Address</label>
+                                <input type="email" id="form-email" name="entry.1025400076" required class="w-full bg-gray-950 border border-gray-800 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 rounded-xl px-4 py-3 text-sm text-white transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label data-translate="form_label_strategy" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Selected Domain Strategy</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-gray-950 border border-gray-800 cursor-pointer">
+                                    <input type="radio" name="entry.1322180315" value="Brand Orijentacija" checked class="text-brand-500 focus:ring-brand-500">
+                                    <span data-translate="interactive_brand_orientation" class="text-xs text-white">Brand Orientation</span>
+                                </label>
+                                <label class="flex items-center gap-2.5 p-3 rounded-xl bg-gray-950 border border-gray-800 cursor-pointer">
+                                    <input type="radio" name="entry.1322180315" value="SEO Orijentacija" class="text-brand-500 focus:ring-brand-500">
+                                    <span data-translate="interactive_seo_orientation" class="text-xs text-white">SEO Orientation</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Drag and Drop image box mockup (Info workaround) -->
+                        <div>
+                            <label data-translate="form_photo_label" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Menu Photos or PDF</label>
+                            <div class="border-2 border-dashed border-gray-800/80 rounded-2xl p-5 text-center bg-gray-950/60 text-xs text-gray-400">
+                                <svg class="w-6 h-6 mx-auto text-gray-600 mb-2" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 10.742l4.757-2.378a3 3 0 000-5.364L8.684.622A3 3 0 004 3.305v3.136c0 .874.382 1.701 1.041 2.261l3.643 3.04z"></path></svg>
+                                <span data-translate="form_photo_body_1" class="text-xs text-gray-300 font-medium block">You will send your menu photos directly via WhatsApp or Viber</span>
+                                <span data-translate="form_photo_body_2" class="text-[10px] text-gray-500 block mt-1">Once we establish contact, we will open a direct chat for easy photo transfer. No Google sign-in required.</span>
+                            </div>
+                        </div>
+
+                        <!-- Configured additions summary text inside the form -->
+                        <div class="p-4 bg-brand-500/5 rounded-xl border border-brand-500/10 text-xs text-gray-300 flex justify-between items-center">
+                            <span data-translate="form_summary_label">Selected services summary. Estimated price:</span>
+                            <span class="font-bold text-white text-sm" id="form-total-display">£199</span>
+                        </div>
+
+                        <button type="submit" id="form-submit-btn" data-translate="form_btn_submit" class="w-full py-4 rounded-xl text-sm font-bold text-white bg-brand-600 hover:bg-brand-500 active:scale-98 transition duration-150 shadow-xl shadow-brand-500/20">
+                            Send Request &amp; Get Free Audit
+                        </button>
+                    </form>
+
+                    <!-- Custom Custom Toast Notification Modal (Success / Error) -->
+                    <div id="toast" class="absolute inset-0 bg-darkcard/95 rounded-3xl p-8 flex flex-col justify-center items-center text-center hidden z-20">
+                        <div class="bg-emerald-500/10 p-4 rounded-full text-emerald-400 mb-4">
+                            <svg class="w-12 h-12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 data-translate="toast_title" class="text-2xl font-bold text-white mb-2">Request Successfully Sent!</h3>
+                        <p data-translate="toast_body" class="text-sm text-gray-400 max-w-sm mb-6">We have successfully received your request and Google Profile audit form. Our team will perform the SEO audit and contact you on your phone or email within 2 hours.</p>
+                        <button onclick="closeToast()" data-translate="toast_btn_close" class="px-6 py-2.5 rounded-xl bg-gray-900 border border-gray-800 hover:bg-gray-800 text-xs font-bold text-white transition">
+                            Close Window
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-darkbg border-t border-gray-900/60 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span data-translate="faq_section_badge" class="text-xs font-bold uppercase tracking-wider text-brand-400">Frequently Asked Questions</span>
+                <h2 data-translate="faq_section_title" class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Everything You Want to Know</h2>
+            </div>
+
+            <div class="space-y-4" id="faq-container">
+                <!-- FAQs are injected dynamically to support translation easily -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
+                <div class="flex items-center gap-2">
+                    <div class="bg-gradient-to-tr from-brand-600 to-emerald-500 p-2 rounded-lg text-white">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-base font-extrabold text-white">pricelist.digital</span>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 text-xs text-gray-500">
+                    <a href="#zasto" data-translate="footer_why" class="hover:text-gray-300 transition-colors">Why?</a>
+                    <a href="#kako" data-translate="footer_process" class="hover:text-gray-300 transition-colors">Process</a>
+                    <a href="#cijene" data-translate="footer_pricing" class="hover:text-gray-300 transition-colors">Pricing</a>
+                    <a href="https://quickstar.store/" target="_blank" data-translate="footer_hardware" class="hover:text-gray-300 transition-colors">QuickStar Hardware</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-900 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p data-translate="footer_copy" class="text-[11px] text-gray-600">&copy; 2026 pricelist.digital. All rights reserved. Part of QuickStar Network.</p>
+                <p data-translate="footer_examples" class="text-[11px] text-gray-600">All referenced examples such as namastewien.com, caffebardoboj.com and rustiqe.online are properties of their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripting -->
+    <script>
+        // Set submit listener flag
+        let submitted = false;
+        let currentLang = 'en';
+
+        // Translations Dictionary (EN, DE and SL)
+        const translations = {
+            en: {
+                nav_why: "Why Digital?",
+                nav_how: "How It Works",
+                nav_clients: "Clients",
+                nav_pricing: "Pricing",
+                nav_faq: "FAQ",
+                btn_create_header: "Create Now",
+                hero_badge: "Full Integration with Google Business Profile",
+                hero_title_1: "Your pricelist on the",
+                hero_title_2: "first page of Google",
+                hero_subtitle: "Turn your paper or slow PDF menu into a super-fast, SEO-optimized digital pricelist. Help clients find you instantly and let search engines index your entire offer.",
+                hero_proof_1: "No monthly subscriptions",
+                hero_proof_2: "Delivery in 48 hours",
+                hero_proof_3_prefix: "One-off",
+                hero_cta: "Start Your Project",
+                hero_learn: "Learn More",
+                mockup_demo: "Pricelist Demo",
+                mockup_active: "Active",
+                mockup_course: "Main Course",
+                mockup_item_1_title: "Rustiqe Ribeye Steak",
+                mockup_item_1_desc: "Baby potatoes, mushroom sauce, rosemary",
+                mockup_item_2_title: "Homemade Pasta Carbonara",
+                mockup_item_2_desc: "Pancetta, egg yolk, parmesan, black pepper",
+                mockup_beverages: "Beverages",
+                mockup_item_3_title: "Fresh Raspberry Cordial",
+                mockup_item_3_desc: "100% natural locally sourced handpicked berries",
+                mockup_powered: "Powered by:",
+                prob_title: "Why is the old way hurting your revenue?",
+                prob_subtitle: "Most cafes, restaurants, and salons upload blurry menu photos or heavy PDFs to their Google Profile. Here is why you are losing customers.",
+                prob_bad_title: "Bad Practice: Photos and PDF Files",
+                prob_bad_list_1: "<strong>Frustrating Zooming:</strong> Text is too small, blurry, and hard to read on mobile screens.",
+                prob_bad_list_2: "<strong>Invisible to Google:</strong> Search engines cannot read text inside images. Your \"best burger\" is just a bunch of pixels to Google.",
+                prob_bad_list_3: "<strong>Complicated Updates:</strong> Every price change requires re-printing, photographing, and re-uploading.",
+                prob_bad_footer: "Losing up to 30% of potential visitors from Google Maps.",
+                prob_good_title: "The Solution: pricelist.digital Menus",
+                prob_good_list_1: "<strong>Ultra Fast & Responsive:</strong> Your menu loads in milliseconds, perfectly optimized for every mobile screen.",
+                prob_good_list_2: "<strong>Powerful Local SEO:</strong> Google reads every item name and price. When someone searches for a specific service in your city, you rank on top.",
+                prob_good_list_3: "<strong>One Permanent Address:</strong> A permanent link on your own custom domain that is easy to share.",
+                prob_good_footer: "Guaranteed higher visibility on local Google searches.",
+                res_badge: "Local Growth Engine",
+                res_title: "Results after switching to our digital pricelist",
+                res_subtitle: "Our system doesn't just change how your menu looks – it dramatically accelerates your local business growth and optimizes your online presence.",
+                res_stat_1_title: "More profile clicks",
+                res_stat_1_desc: "Increased interaction and visitor clicks from Google Maps straight to your menu.",
+                res_stat_2_title: "More phone calls",
+                res_stat_2_desc: "Direct bookings, inquiries, and table reservations right after viewing the pricelist.",
+                res_stat_3_title: "More Google Maps views",
+                res_stat_3_desc: "Google ranks you higher in local searches because you have a fast, readable website linked.",
+                res_stat_4_title: "Indexed items",
+                res_stat_4_desc: "All your dishes, drinks, or services become searchable keywords indexed on Google.",
+                res_disclaimer: "* Data represents early estimates and test results of active user profiles.",
+                search_badge: "What are people searching for?",
+                search_title_1: "Your offer is invisible on searches.",
+                search_title_2: "It's time to change that.",
+                search_desc: "When potential customers search for food or services in your town, Google scans text. If your pricelist is a photo or a PDF, you are invisible to search engines.",
+                search_alert_box: "💡 With our system, every single dish, drink, or treatment becomes readable. When customers search – Google can finally find YOUR offer!",
+                search_heading: "Examples of local searches:",
+                search_label: "Customer search:",
+                search_found: "Found Instantly ✓",
+                seo_expl_title: "How does your digital pricelist actually bring in new customers?",
+                seo_expl_1_title: "Keyword Indexing",
+                seo_expl_1_desc: "If you run a beauty salon offering \"laser hair removal\", that term must exist as raw text code. Google crawls your domain and indexes it instantly.",
+                seo_expl_2_title: "Local SEO Authority",
+                seo_expl_2_desc: "Google loves when your Business Profile links to a fast, modern, HTTPS-secured website containing your actual services. This boosts your entire local ranking on the maps.",
+                seo_expl_3_title: "Higher Conversion Rate",
+                seo_expl_3_desc: "Customers make decisions faster. When they see a clear, responsive menu on Google Maps that opens instantly, the booking rate increases by over 42%.",
+                mockup_preview_badge: "Interactive Preview",
+                seo_see_title: "How Google Sees It",
+                seo_profile_label: "Google Business Profile",
+                seo_analysis_status: "Traffic Analysis Status:",
+                seo_speed_label: "SEO Speed",
+                seo_readability_label: "Readability",
+                seo_ranking_label: "Ranking",
+                interactive_badge: "Interactive Tool",
+                interactive_title: "Which domain strategy is perfect for you?",
+                interactive_subtitle: "Enter your business details to see which strategy fits your growth goals.",
+                interactive_label_name: "Your Business Name",
+                interactive_label_city: "Your City / Location",
+                interactive_label_type: "Business Type",
+                interactive_opt_restaurant: "Restaurant / Pizzeria",
+                interactive_opt_salon: "Beauty & Hair Salon",
+                interactive_opt_bar: "Cafe Bar / Pub",
+                interactive_opt_dental: "Dental & Aesthetic Clinic",
+                interactive_btn_generate: "Generate Domain Suggestions",
+                interactive_brand_orientation: "Brand Orientation",
+                interactive_brand_desc: "Focuses entirely on your business name. Perfect for sharing on social media, printed QR codes, and overall brand recognition.",
+                interactive_brand_best: "✓ Best for: Established brands and local landmarks.",
+                interactive_seo_orientation: "SEO Orientation",
+                interactive_seo_desc: "Focuses on keywords people actively search on Google in your city. Speeds up local map ranking and attracts new discovery searches.",
+                interactive_seo_best: "✓ Best for: Capturing highly intent-driven search traffic.",
+                proven_badge: "Our Proven Concept",
+                proven_title: "See real-world examples",
+                proven_subtitle: "We've helped businesses transform their digital presence. Click the links below to test the speed and responsiveness.",
+                proven_card_1_type: "Indian Restaurant",
+                proven_card_1_desc: "Premium digital menu for a highly-rated Indian restaurant in Vienna. Guests browse traditional dishes and drinks instantly without downloading heavy PDF files.",
+                proven_card_1_visit: "Visit website",
+                proven_card_2_type: "Cafe Bar & Lounge",
+                proven_card_2_desc: "A complete wine list and beverage selection integrated onto their Google Profile in Doboj, making it easy for customers on the street to find their offerings.",
+                proven_card_3_type: "Restaurant & Grill",
+                proven_card_3_desc: "A fully loaded menu on a lightning-fast custom domain for a restaurant in Doboj. Every dish is fully indexed and perfectly optimized for mobile.",
+                process_badge: "Simple Process",
+                process_title: "Your digital pricelist in 3 easy steps",
+                process_subtitle: "We've completely simplified the launch process to save your precious business hours.",
+                process_step_1_title: "Snap & Send",
+                process_step_1_desc: "Just take a photo of your current paper menu or send us a PDF. Our team takes care of digitizing, formatting, and styling it in your brand colors.",
+                process_step_2_title: "Choose the Perfect Domain",
+                process_step_2_desc: "Decide on an SEO-focused domain for maximum reach or a BRAND domain for brand strength.",
+                process_step_3_title: "Connect & Launch",
+                process_step_3_desc: "Within 48 hours, we build the pricelist, install the SSL certificate, deploy it to cloud hosting, and integrate the link directly onto your Google Profile.",
+                pricing_badge: "Transparent Pricing",
+                pricing_title: "Simple Pricing, No Hidden Subscriptions",
+                pricing_subtitle: "The basic setup and deployment of your digital pricelist is a flat, one-off fee, and we offer optional growth-booster add-ons.",
+                pricing_card_left_title: "What's included in the basic package?",
+                pricing_card_left_subtitle: "Everything you need for a complete digital launch and permanent web presence.",
+                pricing_feature_1_title: "Complete Setup",
+                pricing_feature_1_desc: "Manual input of up to 150 items from your photos.",
+                pricing_feature_2_title: "Fast & Secure Hosting",
+                pricing_feature_2_desc: "Your first year of high-speed hosting is completely free.",
+                pricing_feature_3_title: "Domain of Choice",
+                pricing_feature_3_desc: "Registration of your BRAND or SEO domain.",
+                pricing_feature_4_title: "SSL (HTTPS) Certificate",
+                pricing_feature_4_desc: "Secure padlock connection for maximum trust.",
+                pricing_feature_5_title: "Google Maps Integration",
+                pricing_feature_5_desc: "Linking the pricelist directly to your Google Profile.",
+                pricing_feature_6_title: "Domain Renewal Only",
+                pricing_feature_6_desc: "After year one, pay only standard annual domain renewal.",
+                pricing_addon_header: "Optional Extra Services:",
+                pricing_addon_1_title: "Google Business Profile Optimization",
+                pricing_addon_1_desc: "Full audit and optimization of descriptions, categories, and photos on maps.",
+                pricing_addon_2_title: "NFC & QR Hardware (QuickStar)",
+                pricing_addon_2_desc: "Physical smart stands and tap cards for instant menu access.",
+                pricing_addon_3_title: "Custom Interactive Modules",
+                pricing_addon_3_desc: "Add custom booking modules, reservation forms, or loyalty systems.",
+                pricing_card_right_badge: "Best Value",
+                pricing_card_right_title: "Total Cost",
+                pricing_card_right_subs: "One-off payment. No contract or monthly fees.",
+                pricing_card_right_summary: "Selected services summary. Estimated price:",
+                pricing_card_right_partner: "NFC and QR accessories (cards, stands, plaques) are delivered in partnership with our store <a href=\"https://quickstar.store/\" target=\"_blank\" class=\"text-brand-400 underline\">QuickStar.store</a>.",
+                pricing_card_right_cta: "Proceed to Order",
+                form_section_badge: "Send Inquiry",
+                form_section_title: "Ready to launch your digital menu?",
+                form_section_subtitle: "Fill out the form below. We will analyze your Google Profile and prepare domain suggestions before we get in touch to collect your menu photos.",
+                form_step_header: "What happens next?",
+                form_step_1: "Your details are recorded in our system.",
+                form_step_2: "We analyze your profile and prepare domain suggestions.",
+                form_step_3: "We contact you to consult and collect your menu photos.",
+                form_featured_badge: "FEATURED / FREE",
+                form_featured_title: "Free Google Profile SEO Analysis",
+                form_featured_desc: "Submitting this inquiry is <strong>completely free and non-binding</strong>. Your request serves as a preliminary inquiry. Once received, our team will conduct a <strong>detailed SEO audit</strong> of your existing Google Business Profile to map out exactly how to grow your visibility.",
+                form_featured_footer: "Realization, payment, and pricelist creation only start after we do the consultation and you officially approve the project.",
+                form_label_name: "Owner's Full Name",
+                form_label_biz: "Business Name",
+                form_label_phone: "Contact Phone (Viber/WhatsApp)",
+                form_label_email: "Email Address",
+                form_label_strategy: "Selected Domain Strategy",
+                form_photo_label: "Menu Photos or PDF",
+                form_photo_body_1: "You will send your menu photos directly via WhatsApp or Viber",
+                form_photo_body_2: "Once we establish contact, we will open a direct chat for easy photo transfer. No Google sign-in required.",
+                form_summary_label: "Selected services summary. Estimated price:",
+                form_btn_submit: "Send Request & Get Free Audit",
+                toast_title: "Request Successfully Sent!",
+                toast_body: "We have successfully received your request and Google Profile audit form. Our team will perform the SEO audit and contact you on your phone or email within 2 hours.",
+                toast_btn_close: "Close Window",
+                faq_section_badge: "Frequently Asked Questions",
+                faq_section_title: "Everything You Want to Know",
+                footer_why: "Why?",
+                footer_process: "Process",
+                footer_pricing: "Pricing",
+                footer_hardware: "QuickStar Hardware",
+                footer_copy: "&copy; 2026 pricelist.digital. All rights reserved. Part of QuickStar Network.",
+                footer_examples: "All referenced examples such as namastewien.com, caffebardoboj.com and rustiqe.online are properties of their respective owners."
+            },
+            de: {
+                nav_why: "Warum Digital?",
+                nav_how: "Ablauf",
+                nav_clients: "Referenzen",
+                nav_pricing: "Preise",
+                nav_faq: "FAQ",
+                btn_create_header: "Jetzt erstellen",
+                hero_badge: "Vollständige Integration in das Google Business Profile",
+                hero_title_1: "Ihre Preisliste auf der",
+                hero_title_2: "ersten Seite von Google",
+                hero_subtitle: "Verwandeln Sie Ihre Papier- oder langsame PDF-Speisekarte in eine superschnelle, SEO-optimierte digitale Preisliste. Helfen Sie Kunden, Sie sofort zu finden, und lassen Sie Suchmaschinen Ihr gesamtes Angebot indexieren.",
+                hero_proof_1: "Keine monatlichen Abos",
+                hero_proof_2: "Fertigstellung in 48 Stunden",
+                hero_proof_3_prefix: "Einmalig",
+                hero_cta: "Projekt starten",
+                hero_learn: "Mehr erfahren",
+                mockup_demo: "Preislisten-Demo",
+                mockup_active: "Aktiv",
+                mockup_course: "Hauptspeisen",
+                mockup_item_1_title: "Rustiqe Ribeye Steak",
+                mockup_item_1_desc: "Babykartoffeln, Pilzsauce, frischer Rosmarin",
+                mockup_item_2_title: "Hausgemachte Pasta Carbonara",
+                mockup_item_2_desc: "Pancetta, Eigelb, Parmesan, frisch gemahlener Pfeffer",
+                mockup_beverages: "Getränke",
+                mockup_item_3_title: "Frische Himbeerschorle",
+                mockup_item_3_desc: "100% natürlich, aus der Region, handverlesene Beeren",
+                mockup_powered: "Unterstützt durch:",
+                prob_title: "Warum schadet die alte Methode Ihrem Umsatz?",
+                prob_subtitle: "Die meisten Cafés, Restaurants und Salons laden unscharfe Speisekarten-Fotos oder schwere PDFs in ihr Google-Profil hoch. Hier ist der Grund, warum Sie Kunden verlieren.",
+                prob_bad_title: "Schlechte Praxis: Fotos und PDF-Dateien",
+                prob_bad_list_1: "<strong>Frustrierendes Zoomen:</strong> Der Text ist zu klein, verschwommen und auf mobilen Bildschirmen schwer lesbar.",
+                prob_bad_list_2: "<strong>Unsichtbar für Google:</strong> Suchmaschinen können keinen Text in Bildern lesen. Ihr \"bester Burger\" ist für Google nur ein Haufen Pixel.",
+                prob_bad_list_3: "<strong>Komplizierte Updates:</strong> Jede Preisänderung erfordert Neudruck, Fotografieren und erneutes Hochladen.",
+                prob_bad_footer: "Verlust von bis zu 30% potenzieller Besucher von Google Maps.",
+                prob_good_title: "Die Lösung: pricelist.digital Preislisten",
+                prob_good_list_1: "<strong>Superschnell & Responsive:</strong> Ihre Speisekarte lädt in Millisekunden, perfekt optimiert für jeden mobilen Bildschirm.",
+                prob_good_list_2: "<strong>Starkes lokales SEO:</strong> Google liest jeden Artikelnamen und Preis. Wenn jemand nach einer bestimmten Dienstleistung in Ihrer Stadt sucht, landen Sie ganz oben.",
+                prob_good_list_3: "<strong>Eine feste Adresse:</strong> Ein dauerhafter Link auf Ihrer eigenen benutzerdefinierten Domain, der einfach zu teilen ist.",
+                prob_good_footer: "Garantierte höhere Sichtbarkeit bei lokalen Google-Suchen.",
+                res_badge: "Lokaler Wachstumsbeschleuniger",
+                res_title: "Ergebnisse nach dem Wechsel zu unserer digitalen Preisliste",
+                res_subtitle: "Unser System ändert nicht nur das Aussehen Ihrer Karte – es beschleunigt das Wachstum Ihres lokalen Unternehmens dramatisch und optimiert Ihre Online-Präsenz.",
+                res_stat_1_title: "Mehr Profil-Klicks",
+                res_stat_1_desc: "Erhöhte Interaktion und Besucher-Klicks von Google Maps direkt auf Ihre Karte.",
+                res_stat_2_title: "More phone calls",
+                res_stat_2_desc: "Direkte Buchungen, Anfragen und Tischreservierungen direkt nach Ansicht der Preisliste.",
+                res_stat_3_title: "Mehr Google Maps Aufrufe",
+                res_stat_3_desc: "Google rankt Sie in lokalen Suchen höher, weil Sie eine schnelle, lesbare Website verlinkt haben.",
+                res_stat_4_title: "Indexierte Artikel",
+                res_stat_4_desc: "Alle Ihre Gerichte, Getränke oder Dienstleistungen werden als durchsuchbare Keywords bei Google indexiert.",
+                res_disclaimer: "* Die Daten basieren auf frühen Schätzungen und Testergebnissen aktiver Nutzerprofile.",
+                search_badge: "Wonach suchen die Leute?",
+                search_title_1: "Ihr Angebot ist bei Google Suchen unsichtbar.",
+                search_title_2: "Es ist Zeit, das zu ändern.",
+                search_desc: "Wenn potenzielle Kunden in Ihrer Stadt nach Essen oder Dienstleistungen suchen, scannt Google Text. Wenn Ihre Preisliste ein Foto oder ein PDF ist, sind Sie für Suchmaschinen unsichtbar.",
+                search_alert_box: "💡 Mit unserem System wird jedes einzelne Gericht, Getränk oder jede Behandlung lesbar. Wenn Kunden suchen, kann Google endlich IHR Angebot finden!",
+                search_heading: "Beispiele für lokale Suchen:",
+                search_label: "Kundensuche:",
+                search_found: "Sofort gefunden ✓",
+                seo_expl_title: "Wie bringt Ihnen Ihre digitale Preisliste tatsächlich neue Kunden?",
+                seo_expl_1_title: "Keyword-Indexierung",
+                seo_expl_1_desc: "Wenn Sie einen Schönheitssalon betreiben, der \"Laser-Haarentfernung\" anbietet, muss dieser Begriff als reiner Textcode existieren. Google scannt Ihre Domain und indexiert ihn sofort.",
+                seo_expl_2_title: "Lokale SEO-Autorität",
+                seo_expl_2_desc: "Google liebt es, wenn Ihr Unternehmensprofil auf eine schnelle, moderne, über HTTPS gesicherte Website verweist, die Ihre tatsächlichen Dienstleistungen enthält. Dies steigert Ihr gesamtes lokales Ranking auf den Karten.",
+                seo_expl_3_title: "Höhere Conversion-Rate",
+                seo_expl_3_desc: "Kunden treffen Entscheidungen schneller. Wenn sie eine übersichtliche, responsive Karte auf Google Maps sehen, die sich sofort öffnet, steigt die Buchungsrate um über 42%.",
+                mockup_preview_badge: "Interaktive Vorschau",
+                seo_see_title: "Wie Google es sieht",
+                seo_profile_label: "Google Business Profil",
+                seo_analysis_status: "Status der Traffic-Analyse:",
+                seo_speed_label: "SEO Tempo",
+                seo_readability_label: "Lesbarkeit",
+                seo_ranking_label: "Ranking",
+                interactive_badge: "Interaktives Tool",
+                interactive_title: "Welche Domain-Strategie ist perfekt für Sie?",
+                interactive_subtitle: "Geben Sie Ihre Geschäftsdaten ein, um zu sehen, welche Strategie zu Ihren Wachstumszielen passt.",
+                interactive_label_name: "Ihr Unternehmensname",
+                interactive_label_city: "Ihre Stadt / Standort",
+                interactive_label_type: "Geschäftstyp",
+                interactive_opt_restaurant: "Restaurant / Pizzeria",
+                interactive_opt_salon: "Schönheits- & Friseursalon",
+                interactive_opt_bar: "Café Bar / Pub",
+                interactive_opt_dental: "Zahn- & Ästhetikklinik",
+                interactive_btn_generate: "Domain-Vorschläge generieren",
+                interactive_brand_orientation: "Markenorientierung",
+                interactive_brand_desc: "Konzentriert sich ganz auf Ihren Geschäftsnamen. Perfekt zum Teilen in sozialen Medien, gedruckten QR-Codes und für den allgemeinen Markenwert.",
+                interactive_brand_best: "✓ Besten für: Etablierte Marken und lokale Wahrzeichen.",
+                interactive_seo_orientation: "SEO-Orientierung",
+                interactive_seo_desc: "Konzentriert sich auf Keywords, nach denen Menschen in Ihrer Stadt aktiv auf Google suchen. Beschleunigt das Ranking auf lokalen Karten und zieht Neukunden an.",
+                interactive_seo_best: "✓ Besten für: Das Erfassen von zielgerichtetem Suchtraffic.",
+                proven_badge: "Unser bewährtes Konzept",
+                proven_title: "Sehen Sie sich Beispiele aus der Praxis an",
+                proven_subtitle: "Wir haben Unternehmen dabei geholfen, ihre digitale Präsenz zu transformieren. Klicken Sie auf die Links unten, um die Geschwindigkeit und Reaktionsfähigkeit zu testen.",
+                proven_card_1_type: "Indisches Restaurant",
+                proven_card_1_desc: "Premium-Digitalmenü für ein hochbewertetes indisches Restaurant in Wien. Gäste stöbern sofort in traditionellen Gerichten und Getränken, ohne schwere PDFs herunterzuladen.",
+                proven_card_1_visit: "Website besuchen",
+                proven_card_2_type: "Café-Bar & Lounge",
+                proven_card_2_desc: "Eine komplette Weinkarte und Getränkeauswahl, integriert in ihr Google-Profil in Doboj, sodass Kunden auf der Straße ihre Angebote leicht finden können.",
+                proven_card_3_type: "Restaurant & Grill",
+                proven_card_3_desc: "Eine voll ausgestattete Speisekarte auf einer blitzschnellen benutzerdefinierten Domain für ein Restaurant in Doboj. Jedes Gericht ist vollständig indexiert und perfekt für Mobilgeräte optimiert.",
+                process_badge: "Einfacher Ablauf",
+                process_title: "Ihre digitale Preisliste in 3 einfachen Schritten",
+                process_subtitle: "Wir haben den Startprozess komplett vereinfacht, um Ihnen wertvolle Arbeitsstunden zu sparen.",
+                process_step_1_title: "Fotografieren & Senden",
+                process_step_1_desc: "Machen Sie einfach ein Foto Ihrer aktuellen Papierkarte oder senden Sie uns ein PDF. Unser Team kümmert sich um die Digitalisierung, Formatierung und Gestaltung in Ihren Markenfarben.",
+                process_step_2_title: "Die perfekte Domain wählen",
+                process_step_2_desc: "Entscheiden Sie sich für eine SEO-fokussierte Domain für maximale Reichweite oder eine BRAND-Domain für Markenstärke.",
+                process_step_3_title: "Verbinden & Starten",
+                process_step_3_desc: "Innerhalb von 48 Stunden erstellen wir die Preisliste, installieren das SSL-Zertifikat, stellen sie auf dem Cloud-Hosting bereit und binden den Link direkt in Ihr Google-Profil ein.",
+                pricing_badge: "Transparente Preise",
+                pricing_title: "Einfache Preise, keine versteckten Abos",
+                pricing_subtitle: "Die grundlegende Einrichtung und Bereitstellung Ihrer digitalen Preisliste ist eine einmalige Pauschalgebühr, und wir bieten optionale Wachstums-Booster an.",
+                pricing_card_left_title: "Was ist im Basispaket enthalten?",
+                pricing_card_left_subtitle: "Alles, was Sie für einen kompletten digitalen Start und eine dauerhafte Webpräsenz benötigen.",
+                pricing_feature_1_title: "Komplette Einrichtung",
+                pricing_feature_1_desc: "Manuelle Eingabe von bis zu 150 Artikeln aus Ihren Fotos.",
+                pricing_feature_2_title: "Schnelles & sicheres Hosting",
+                pricing_feature_2_desc: "Ihr erstes Jahr Highspeed-Hosting ist völlig kostenlos.",
+                pricing_feature_3_title: "Domain nach Wahl",
+                pricing_feature_3_desc: "Registrierung Ihrer BRAND- oder SEO-Domain.",
+                pricing_feature_4_title: "SSL (HTTPS) Zertifikat",
+                pricing_feature_4_desc: "Sichere Padlock-Verbindung für maximales Vertrauen.",
+                pricing_feature_5_title: "Google Maps Integration",
+                pricing_feature_5_desc: "Verknüpfung der Preisliste direkt mit Ihrem Google-Profil.",
+                pricing_feature_6_title: "Nur Domainverlängerung",
+                pricing_feature_6_desc: "Nach dem ersten Jahr zahlen Sie nur die standardmäßige jährliche Domainverlängerung.",
+                pricing_addon_header: "Optionale Zusatzleistungen:",
+                pricing_addon_1_title: "Google Business Profile Optimierung",
+                pricing_addon_1_desc: "Vollständige Prüfung und Optimierung von Beschreibungen, Kategorien und Fotos auf Karten.",
+                pricing_addon_2_title: "NFC & QR Hardware (QuickStar)",
+                pricing_addon_2_desc: "Physische smarte Aufsteller und Tap-Karten für sofortigen Menüzugriff.",
+                pricing_addon_3_title: "Benutzerdefinierte interaktive Module",
+                pricing_addon_3_desc: "Fügen Sie benutzerdefinierte Buchungsmodule, Reservierungsformulare oder Treuesysteme hinzu.",
+                pricing_card_right_badge: "Bester Wert",
+                pricing_card_right_title: "Gesamtkosten",
+                pricing_card_right_subs: "Einmalige Zahlung. Kein Vertrag oder monatliche Gebühren.",
+                pricing_card_right_summary: "Zusammenfassung der ausgewählten Services. Geschätzter Preis:",
+                pricing_card_right_partner: "NFC- und QR-Zubehör (Karten, Aufsteller, Plaketten) wird in Partnerschaft mit unserem Shop <a href=\"https://quickstar.store/\" target=\"_blank\" class=\"text-brand-400 underline\">QuickStar.store</a> geliefert.",
+                pricing_card_right_cta: "Zur Bestellung übergehen",
+                form_section_badge: "Anfrage senden",
+                form_section_title: "Bereit, Ihre digitale Karte zu starten?",
+                form_section_subtitle: "Füllen Sie das Formular unten aus. Wir analysieren Ihr Google-Profil und bereiten Domain-Vorschläge vor, bevor wir uns mit Ihnen in Verbindung setzen, um Ihre Fotos zu erhalten.",
+                form_step_header: "Was passiert als Nächstes?",
+                form_step_1: "Ihre Daten werden in unserem System registriert.",
+                form_step_2: "Wir analysieren Ihr Profil und bereiten Domainvorschläge vor.",
+                form_step_3: "Wir kontaktieren Sie zur Beratung und zur Abholung Ihrer Menüfotos.",
+                form_featured_badge: "HERVORGEHOBEN / KOSTENLOS",
+                form_featured_title: "Kostenlose Google Profil SEO-Analyse",
+                form_featured_desc: "Das Absenden dieser Anfrage ist <strong>völlig kostenlos und unverbindlich</strong>. Ihre Anfrage dient als vorläufige Anfrage. Nach Erhalt führt unser Team ein <strong>detailliertes SEO-Audit</strong> Ihres bestehenden Google Business-Profils durch, um genau zu planen, wie Sie Ihre Sichtbarkeit steigern können.",
+                form_featured_footer: "Realisierung, Zahlung und Erstellung der Preisliste beginnen erst, nachdem wir die Beratung durchgeführt haben und Sie das Projekt offiziell genehmigen.",
+                form_label_name: "Vollständiger Name des Inhabers",
+                form_label_biz: "Unternehmensname",
+                form_label_phone: "Kontakttelefon (Viber/WhatsApp)",
+                form_label_email: "E-Mail-Adresse",
+                form_label_strategy: "Ausgewählte Domain-Strategie",
+                form_photo_label: "Menüfotos oder PDF",
+                form_photo_body_1: "Sie senden Ihre Menüfotos direkt per WhatsApp oder Viber",
+                form_photo_body_2: "Sobald wir Kontakt hergestellt haben, öffnen wir einen direkten Chat für den einfachen Fototransfer. Kein Google-Login erforderlich.",
+                form_summary_label: "Zusammenfassung der ausgewählten Services. Geschätzter Preis:",
+                form_btn_submit: "Anfrage senden & kostenloses Audit erhalten",
+                toast_title: "Anfrage erfolgreich gesendet!",
+                toast_body: "Wir haben Ihre Anfrage und das Google-Profil-Audit-Formular erfolgreich erhalten. Unser Team wird das SEO-Audit durchführen und Sie innerhalb von 2 Stunden auf Ihrem Telefon oder per E-Mail kontaktieren.",
+                toast_btn_close: "Fenster schließen",
+                faq_section_badge: "Häufig gestellte Fragen",
+                faq_section_title: "Alles, was Sie wissen wollen",
+                footer_why: "Warum?",
+                footer_process: "Ablauf",
+                footer_pricing: "Preise",
+                footer_hardware: "QuickStar Hardware",
+                footer_copy: "&copy; 2026 pricelist.digital. Alle Rechte vorbehalten. Teil des Google-Netzwerks.",
+                footer_examples: "Alle genannten Referenzbeispiele wie namastewien.com, caffebardoboj.com und rustiqe.online sind Eigentum ihrer jeweiligen Inhaber."
+            },
+            sl: {
+                nav_why: "Zakaj digitalni?",
+                nav_how: "Kako deluje",
+                nav_clients: "Stranke",
+                nav_pricing: "Cenik",
+                nav_faq: "Pogosta vprašanja",
+                btn_create_header: "Ustvari zdaj",
+                hero_badge: "Popolna integracija z Google Business profilom",
+                hero_title_1: "Vaš cenik na",
+                hero_title_2: "prvi strani Googla",
+                hero_subtitle: "Pretvorite svoj papirnati ali počasen PDF meni v izjemno hiter, SEO optimiziran digitalni cenik. Pomagajte strankam, da vas najdejo takoj, in dovolite iskalnikom, da indeksirajo celotno ponudbo.",
+                hero_proof_1: "Brez mesečnih naročnin",
+                hero_proof_2: "Dostava v 48 urah",
+                hero_proof_3_prefix: "Enkratno",
+                hero_cta: "Začnite projekt",
+                hero_learn: "Več o tem",
+                mockup_demo: "Predogled cenika",
+                mockup_active: "Aktivno",
+                mockup_course: "Glavne jedi",
+                mockup_item_1_title: "Rustiqe Ribeye Steak",
+                mockup_item_1_desc: "Mladi krompir, gobova omaka, svež rožmarin",
+                mockup_item_2_title: "Domače testenine Carbonara",
+                mockup_item_2_desc: "Panceta, jajčni rumenjak, parmezan, črni poper",
+                mockup_beverages: "Pijače",
+                mockup_item_3_title: "Svež malinov sok",
+                mockup_item_3_desc: "100% naraven sok iz lokalno nabranih gozdnih malin",
+                mockup_powered: "Poganja:",
+                prob_title: "Zakaj stari način škoduje vašim prihodkom?",
+                prob_subtitle: "Večina kavarn, restavracij in salonov na svoj Google profil naloži zamegljene fotografije menijev ali težke PDF-je. Tukaj je razlog, zakaj izgubljate stranke.",
+                prob_bad_title: "Slaba praksa: Fotografije in PDF datoteke",
+                prob_bad_list_1: "<strong>Frustrirajoče povečevanje:</strong> Besedilo je premajhno, zamegljeno in težko berljivo na mobilnih zaslonih.",
+                prob_bad_list_2: "<strong>Nevidno za Google:</strong> Iskalniki ne morejo brati besedila znotraj slik. Vaš \"najboljši burger\" je za Google le kup slikovnih pik.",
+                prob_bad_list_3: "<strong>Zapleteno posodabljanje:</strong> Vsaka sprememba cene zahteva ponovno tiskanje, fotografiranje in nalaganje.",
+                prob_bad_footer: "Izguba do 30% potencialnih obiskovalcev z Google Zemljevidov.",
+                prob_good_title: "Rešitev: pricelist.digital ceniki",
+                prob_good_list_1: "<strong>Izjemno hitro in odzivno:</strong> Vaš meni se naloži v milisekundah, popolnoma prilagojen vsakemu mobilnemu zaslonu.",
+                prob_good_list_2: "<strong>Močan lokalni SEO:</strong> Google prebere vsako ime artikla in ceno. Ko nekdo išče določeno storitev v vašem mestu, se uvrstite na vrh.",
+                prob_good_list_3: "<strong>Eno stalno spletno mesto:</strong> Trajna povezava na vaši lastni domeni, ki jo je enostavno deliti.",
+                prob_good_footer: "Zajamčena višja vidljivost pri lokalnih iskanjih na Googlu.",
+                res_badge: "Lokalni pospeševalnik rasti",
+                res_title: "Rezultati po prehodu na naš digitalni cenik",
+                res_subtitle: "Naš sistem ne spremeni le videza vašega cenika – dramatično pospeši rast vašega lokalnega podjetja in optimizira vašo spletno prisotnost.",
+                res_stat_1_title: "Več klikov na profil",
+                res_stat_1_desc: "Povečana interakcija in kliki obiskovalcev z Google Zemljevidov neposredno na vaš meni.",
+                res_stat_2_title: "Več telefonskih klicev",
+                res_stat_2_desc: "Neposredne rezervacije, poizvedbe in rezervacije miz takoj po ogledu cenika.",
+                res_stat_3_title: "Več ogledov na Google Zemljevidih",
+                res_stat_3_desc: "Google vas uvršča višje v lokalnih iskanjih, ker imate povezano hitro in berljivo spletno stran.",
+                res_stat_4_title: "Indeksirani artikli",
+                res_stat_4_desc: "Vse jedi, pijače ali storitve postanejo iskalne ključne besede, indeksirane na Googlu.",
+                res_disclaimer: "* Podatki predstavljajo zgodnje ocene in rezultate testiranja aktivnih uporabniških profilov.",
+                search_badge: "Kaj ljudje sploh iščejo?",
+                search_title_1: "Vaša ponudba je nevidna pri iskanju.",
+                search_title_2: "Čas je, da to spremenimo.",
+                search_desc: "Ko potencialne stranke iščejo hrano ali storitve v vašem mestu, Google išče besedilo. Če je vaš cenik fotografija ali PDF, ste za iskalnike nevidni.",
+                search_alert_box: "💡 Z našim sistemom postane vsaka jed, pijača ali storitev berljiva. Ko stranke iščejo – Google lahko končno najde VAŠO ponudbo!",
+                search_heading: "Primeri lokalnih iskanj:",
+                search_label: "Iskanje stranke:",
+                search_found: "Najdeno takoj ✓",
+                seo_expl_title: "Kako vaš digitalni cenik dejansko prinaša nove stranke?",
+                seo_expl_1_title: "Indeksiranje ključnih besed",
+                seo_expl_1_desc: "Če vodite kozmetični salon, ki ponuja \"lasersko odstranjevanje dlak\", mora ta izraz obstajati kot čisto besedilo. Google preišče vašo domeno in jo takoj indeksira.",
+                seo_expl_2_title: "Lokalna SEO avtoriteta",
+                seo_expl_2_desc: "Google obožuje, ko vaš profil podjetja vodi do hitre, moderne spletne strani z vašimi dejanskimi storitvami, zaščitene s HTTPS. To izboljša vašo celotno lokalno uvrstitev na zemljevidih.",
+                seo_expl_3_title: "Višje razmerje konverzije",
+                seo_expl_3_desc: "Stranke se odločajo hitreje. Ko na Google Zemljevidih vidijo jasen, odziven meni, ki se odpre takoj, se stopnja rezervacij poveča za več kot 42%.",
+                mockup_preview_badge: "Interaktivni predogled",
+                seo_see_title: "Kako to vidi Google",
+                seo_profile_label: "Google profil podjetja",
+                seo_analysis_status: "Status analize prometa:",
+                seo_speed_label: "Hitrost SEO",
+                seo_readability_label: "Berljivost",
+                seo_ranking_label: "Uvrstitev",
+                interactive_badge: "Interaktivno orodje",
+                interactive_title: "Katera domenska strategija je popolna za vas?",
+                interactive_subtitle: "Vnesite podatke o svojem podjetju in preverite, katera strategija ustreza vašim ciljem rasti.",
+                interactive_label_name: "Ime vašega podjetja",
+                interactive_label_city: "Vaše mesto / lokacija",
+                interactive_label_type: "Vrsta dejavnosti",
+                interactive_opt_restaurant: "Restavracija / Picerija",
+                interactive_opt_salon: "Kozmetični in frizerski salon",
+                interactive_opt_bar: "Kavarna / Pub",
+                interactive_opt_dental: "Zobozdravstvena in estetska klinika",
+                interactive_btn_generate: "Ustvari predloge domen",
+                interactive_brand_orientation: "Brand orientacija",
+                interactive_brand_desc: "Osredotoča se izključno on ime vašega podjetja. Popolno za deljenje na družbenih omrežjih, natisnjene QR kode in splošno prepoznavnost blagovne znamke.",
+                interactive_brand_best: "✓ Najboljše za: Uveljavljene blagovne znamke in lokalne znamenitosti.",
+                interactive_seo_orientation: "SEO orientacija",
+                interactive_seo_desc: "Osredotoča se na ključne besede, ki jih ljudje aktivno iščejo na Googlu v vašem mestu. Pospeši uvrstitev na lokalnih zemljevidih in pritegne nove stranke.",
+                interactive_seo_best: "✓ Najboljše za: Pridobivanje strank, ki aktivno iščejo storitve.",
+                proven_badge: "Naš dokazani koncept",
+                proven_title: "Oglejte si primere iz resničnega sveta",
+                proven_subtitle: "Podjetjem smo pomagali preoblikovati njihovo digitalno prisotnost. Kliknite spodnje povezave za preizkus hitrosti in odzivnosti.",
+                proven_card_1_type: "Indijska restavracija",
+                proven_card_1_desc: "Premium digitalni meni za visoko ocenjeno indijsko restavracijo na Dunaju. Gostje takoj brskajo po tradicionalnih jedeh in pijačah brez prenašanja težkih PDF datotek.",
+                proven_card_1_visit: "Obiščite spletno stran",
+                proven_card_2_type: "Kavarna in lounge",
+                proven_card_2_desc: "Celoten vinski list in izbor pijač, integriran v njihov Google profil v Doboju, kar strankam na ulici olajša iskanje njihove ponudbe.",
+                proven_card_3_type: "Restavracija in žar",
+                proven_card_3_desc: "Polno naložen meni na bliskovito hitri lastni domeni za restavracijo v Doboju. Vsaka jed je v celoti indeksirana in popolnoma optimizirana za mobilne naprave.",
+                process_badge: "Enostaven postopek",
+                process_title: "Vaš digitalni cenik v 3 preprostih korakih",
+                process_subtitle: "Popolnoma smo poenostavili postopek lansiranja, da vam prihranimo dragocene delovne ure.",
+                process_step_1_title: "Slikaj in pošlji",
+                process_step_1_desc: "Samo fotografirajte svoj trenutni papirnati meni ali nam pošljite PDF. Naša ekipa bo poskrbela za digitalizacijo, oblikovanje in uskladitev z vašimi barvami.",
+                process_step_2_title: "Izberite popolno domeno",
+                process_step_2_desc: "Odločite se za SEO usmerjeno domeno za maksimalen doseg ali BRAND domeno za moč blagovne znamke.",
+                process_step_3_title: "Poveži in objavi",
+                process_step_3_desc: "V roku 48 ur zgradimo cenik, namestimo SSL certifikat, ga naložimo na cloud gostovanje in povezavo integriramo neposredno v vaš Google profil.",
+                pricing_badge: "Transparentne cene",
+                pricing_title: "Enostavne cene, brez skritih naročnin",
+                pricing_subtitle: "Osnovna nastavitev in namestitev vašega digitalnega cenika je enkratni pavšalni znesek, ponujamo pa tudi izbirne dodatke za pospeševanje rasti.",
+                pricing_card_left_title: "Kaj je vključeno v osnovni paket?",
+                pricing_card_left_subtitle: "Vse, kar potrebujete za popoln digitalni start in trajno spletno prisotnost.",
+                pricing_feature_1_title: "Celotna nastavitev",
+                pricing_feature_1_desc: "Ročni vnos do 150 artiklov iz vaših fotografij.",
+                pricing_feature_2_title: "Hitro in varno gostovanje",
+                pricing_feature_2_desc: "Vaše prvo leto hitrega gostovanja je popolnoma brezplačno.",
+                pricing_feature_3_title: "Domena po izbiri",
+                pricing_feature_3_desc: "Registracija vaše BRAND ali SEO domene.",
+                pricing_feature_4_title: "SSL (HTTPS) certifikat",
+                pricing_feature_4_desc: "Varna povezava s ključavnico za maksimalno zaupanje.",
+                pricing_feature_5_title: "Google Zemljevidi integracija",
+                pricing_feature_5_desc: "Povezovanje cenika neposredno z vašim Google profilom.",
+                pricing_feature_6_title: "Samo podaljšanje domene",
+                pricing_feature_6_desc: "Po prvem letu plačate le standardno letno podaljšanje domene.",
+                pricing_addon_header: "Izbirne dodatne storitve:",
+                pricing_addon_1_title: "Optimizacija Google Business profila",
+                pricing_addon_1_desc: "Celovita revizija in optimizacija opisov, kategorij in fotografij na zemljevidih.",
+                pricing_addon_2_title: "NFC in QR oprema (QuickStar)",
+                pricing_addon_2_desc: "Fizična pametna stojala in kartice za takojšen dostop do menija.",
+                pricing_addon_3_title: "Interaktivni moduli po meri",
+                pricing_addon_3_desc: "Dodajte module za rezervacije po meri, obrazce za rezervacije ali sisteme zvestobe.",
+                pricing_card_right_badge: "Najboljša vrednost",
+                pricing_card_right_title: "Skupni strošek",
+                pricing_card_right_subs: "Enkratno plačilo. Brez pogodbe ali mesečnih stroškov.",
+                pricing_card_right_summary: "Pregled izbranih storitev. Ocenjena cena:",
+                pricing_card_right_partner: "NFC in QR pripomočki (kartice, stojala, tablice) se dostavijo v sodelovanju z našo trgovino <a href=\"https://quickstar.store/\" target=\"_blank\" class=\"text-brand-400 underline\">QuickStar.store</a>.",
+                pricing_card_right_cta: "Nadaljuj na naročilo",
+                form_section_badge: "Pošlji povpraševanje",
+                form_section_title: "Ste pripravljeni na lansiranje svojega digitalnega menija?",
+                form_section_subtitle: "Izpolnite spodnji obrazec. Analizirali bomo vaš Google profil in pripravili predloge domen, preden stopimo v stik za prevzem fotografij vašega menija.",
+                form_step_header: "Kaj se zgodi potem?",
+                form_step_1: "Vaši podatki se zabeležijo v naš sistem.",
+                form_step_2: "Analiziramo vaš profil in pripravimo predloge domen.",
+                form_step_3: "Stopimo v stik za svetovanje in prevzem fotografij menija.",
+                form_featured_badge: "IZPOSTAVLJENO / BREZPLAČNO",
+                form_featured_title: "Brezplačna SEO analiza vašega Google profila",
+                form_featured_desc: "Pošiljanje tega povpraševanja je <strong>popolnoma brezplačno in neobavezujuće</strong>. Vaša zahteva služi kot predhodna poizvedba. Po prejemu bo naša ekipa izvedla <strong>podrobno SEO revizijo</strong> vašega obstoječega Google profila podjetja, da natančno načrtuje, kako povečati vašo vidljivost.",
+                form_featured_footer: "Realizacija, plačilo in ustvarjanje cenika se začnejo šele po opravljenem svetovanju in vaši uradni odobritvi projekta.",
+                form_label_name: "Ime in priimek lastnika",
+                form_label_biz: "Ime podjetja",
+                form_label_phone: "Kontaktni telefon (Viber/WhatsApp)",
+                form_label_email: "E-poštni naslov",
+                form_label_strategy: "Izbrana strategija domene",
+                form_photo_label: "Fotografije menija ali PDF",
+                form_photo_body_1: "Fotografije vašega menija nam boste poslali neposredno preko WhatsApp-a ali Viber-ja",
+                form_photo_body_2: "Ko vzpostavimo stik, bomo odprli neposreden klepet za enostaven prenos fotografij. Prijava v Google ni potrebna.",
+                form_summary_label: "Pregled izbranih storitev. Ocenjena cena:",
+                form_btn_submit: "Pošlji povpraševanje in prejmi brezplačno revizijo",
+                toast_title: "Zahteva uspešno poslana!",
+                toast_body: "Uspešno smo prejeli vašo zahtevo in obrazec za revizijo Google profila. Naša ekipa bo opravila SEO revizijo in vas kontaktirala po telefonu ali e-pošti v roku 2 ur.",
+                toast_btn_close: "Zapri okno",
+                faq_section_badge: "Pogosta vprašanja",
+                faq_section_title: "Vse, kar želite vedeti",
+                footer_why: "Zakaj?",
+                footer_process: "Postopek",
+                footer_pricing: "Cene",
+                footer_hardware: "QuickStar oprema",
+                footer_copy: "&copy; 2026 pricelist.digital. Vse pravice pridržane. Del omrežja QuickStar.",
+                footer_examples: "Vsi navedeni primeri, kot so namastewien.com, caffebardoboj.com in rustiqe.online, so last njihovih lastnikov."
+            }
+        };
+
+        const faqData = {
+            en: [
+                { q: "Are there really no monthly fees?", a: "Yes, the £199 price is a one-off. It covers everything: setup, SSL, hosting, and domain registration for the first year. After that, you only pay a standard annual domain renewal fee (typically £15-£25 depending on the extension)." },
+                { q: "How do I make changes to my prices in the future?", a: "We don't force you to learn complex CMS platforms. Whenever you have a price or menu change, simply snap a picture of the changes or send them as text via WhatsApp/Viber. Each individual update of prices or items is charged at a flat rate of £20. You can make unlimited updates throughout the year whenever your offer changes." },
+                { q: "What if I already own a domain?", a: "No problem! We can set up your new digital pricelist on a subdomain (e.g., menu.yourbrand.com) or point your existing domain to our fast cloud hosting servers." },
+                { q: "How do you integrate it with my Google Profile?", a: "If you grant us temporary manager access, we will add the link directly into the 'Menu' or 'Website' fields on your Google map listing. Alternatively, we'll send you a simple step-by-step video guide so you can do it yourself in less than 2 minutes." }
+            ],
+            de: [
+                { q: "Gibt es wirklich keine monatlichen Gebühren?", a: "Ja, der Preis von 199 € ist einmalig. Er deckt alles ab: Einrichtung, SSL, Hosting und Domainregistrierung für das erste Jahr. Danach zahlen Sie nur noch eine standardmäßige jährliche Domainverlängerungsgebühr (in der Regel 15 € bis 25 € je nach Endung)." },
+                { q: "Wie kann ich meine Preise in Zukunft ändern?", a: "Wir zwingen Sie nicht, komplexe CMS-Plattformen zu erlernen. Jedes Mal, wenn Sie eine Preis- oder Menüänderung haben, machen Sie einfach ein Foto der Änderungen oder senden Sie uns diese als Text per WhatsApp/Viber. Jede einzelne Aktualisierung von Preisen oder Artikeln wird mit einer Pauschale von 20 € berechnet. Sie können das ganze Jahr über unbegrenzt viele Aktualisierungen vornehmen, wann immer sich Ihr Angebot ändert." },
+                { q: "Was ist, wenn ich bereits eine Domain besitze?", a: "Kein Problem! Wir können Ihre neue digitale Preisliste auf einer Subdomain einrichten (z. B. menu.ihre-marke.de) oder Ihre bestehende Domain auf unsere schnellen Cloud-Hosting-Server verweisen." },
+                { q: "Wie integrieren Sie es in mein Google-Profil?", a: "Wenn Sie uns temporären Managerzugriff gewähren, fügen wir den Link direkt in die Felder 'Speisekarte' oder 'Website' Ihres Google Maps-Eintrags ein. Alternativ senden wir Ihnen eine einfache Schritt-für-Schritt-Videoanleitung, damit Sie es in weniger als 2 Minuten selbst tun können." }
+            ],
+            sl: [
+                { q: "Ali res ni nobenih mesečnih stroškov?", a: "Da, cena 199 € je enkratna. Vključuje vse: nastavitev, SSL, gostovanje in registracijo domene za prvo leto. Po tem plačate le standardno letno pristojbino za podaljšanje domene (običajno 15 €–25 €, odvisno od končnice)." },
+                { q: "Kako lahko v prihodnosti spremenim svoje cene?", a: "Ne silimo vas v učenje zapletenih sistemov CMS. Kadarkoli želite spremeniti ceno ali ponudbo, preprosto fotografirajte spremembe ali nam jih pošljite kot besedilo preko WhatsApp-a/Viber-ja. Vsaka posamezna posodobitev cen ali artiklov se zaračuna po enotni ceni 20 €. Skozi celo leto lahko opravite neomejeno število posodobitev, ko se vaša ponudba spremeni." },
+                { q: "Kaj pa, če že imam svojo domeno?", a: "Ni problema! Vaš novi digitalni cenik lahko nastavimo na poddomeni (npr. meni.vasablagovnaznamka.si) ali pa vašo obstoješo domeno usmerimo na naše hitre cloud strežnike za gostovanje." },
+                { q: "Kako ga integrirate z mojim Google profilom?", a: "Če nam podelite začasni dostop upravitelja, bomo povezavo dodali neposredno v polji 'Meni' ali 'Spletna stran' na vašem vnosu v Google Zemljevidih. Druga možnost je, da vam pošljemo preprost video vodič po korakih, da lahko to storite sami v manj kot 2 minutah." }
+            ]
+        };
+
+        const localSearches = {
+            en: [
+                { search: "pizza manchester", pill: "pizza manchester" },
+                { search: "espresso leeds", pill: "espresso leeds" },
+                { search: "burger birmingham", pill: "burger birmingham" },
+                { search: "hair salon bristol", pill: "hair salon bristol" },
+                { search: "best steak", pill: "best steak" }
+            ],
+            de: [
+                { search: "pizza münchen", pill: "pizza münchen" },
+                { search: "espresso düsseldorf", pill: "espresso düsseldorf" },
+                { search: "burger frankfurt", pill: "burger frankfurt" },
+                { search: "friseursalon köln", pill: "friseursalon köln" },
+                { search: "bestes steak", pill: "bestes steak" }
+            ],
+            sl: [
+                { search: "pica ljubljana", pill: "pica ljubljana" },
+                { search: "kava maribor", pill: "kava maribor" },
+                { search: "burger celje", pill: "burger celje" },
+                { search: "frizerski salon kranj", pill: "frizerski salon kranj" },
+                { search: "najboljši čevapi", pill: "najboljši čevapi" }
+            ]
+        };
+
+        const prices = {
+            en: { currency: "£", base: 199, gbp: 99, nfc: 49, app: 149 },
+            de: { currency: "€", base: 199, gbp: 99, nfc: 49, app: 149 },
+            sl: { currency: "€", base: 199, gbp: 99, nfc: 49, app: 149 }
+        };
+
+        // Function to toggle between EN, DE and SL
+        function changeLanguage(lang) {
+            currentLang = lang;
+            
+            // 1. Translate all static data elements
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // 2. Adjust currency and text values in pricing configuration
+            const pr = prices[lang];
+            document.getElementById('hero-proof-price').innerText = `${translations[lang].hero_proof_3_prefix} ${pr.currency}${pr.base}`;
+            document.getElementById('addon-price-1').innerText = `+ ${pr.currency}${pr.gbp}`;
+            document.getElementById('addon-price-2').innerText = `+ ${pr.currency}${pr.nfc}`;
+            document.getElementById('addon-price-3').innerText = `+ ${pr.currency}${pr.app}`;
+            document.getElementById('live-base-price').innerText = `${pr.currency}${pr.base}`;
+            document.getElementById('itemized-price-gbp').innerText = `${pr.currency}${pr.gbp}`;
+            document.getElementById('itemized-price-nfc').innerText = `${pr.currency}${pr.nfc}`;
+            document.getElementById('itemized-price-app').innerText = `${pr.currency}${pr.app}`;
+
+            // 3. Dynamic search mockup adjustments
+            const searches = localSearches[lang];
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`search-pill-${i}`).innerText = `"${searches[i-1].pill}"`;
+            }
+            
+            if (lang === 'en') {
+                document.getElementById('mockup-address').innerText = "King Street, Manchester";
+                document.getElementById('search-input-placeholder').innerText = "best steak restaurant near me";
+                document.getElementById('seo-result-title').innerHTML = "Rustiqe Restaurant &amp; Steak House - Manchester";
+                document.getElementById('seo-result-snippet').innerHTML = "...Enjoy premium cuts. Our <strong class='text-white'>Rustiqe Ribeye Steak</strong> for £18.50 is prepared using a traditional recipe... Find our full menu on our digital pricelist.";
+                document.getElementById('mockup-price-1').innerText = "£18.50";
+                document.getElementById('mockup-price-2').innerText = "£12.00";
+                document.getElementById('mockup-price-3').innerText = "£4.50";
+                document.getElementById('hero-title').innerHTML = `Your pricelist on the <br class="hidden sm:inline"><span class="gradient-text py-2">first page of Google</span>`;
+                document.getElementById('search-title-heading').innerHTML = `Your offer is invisible on searches. <br><span class="gradient-text py-1">It's time to change that.</span>`;
+                
+                // Set domain generator defaults
+                document.getElementById('sim-biz-city').value = "Manchester";
+            } else if (lang === 'de') {
+                document.getElementById('mockup-address').innerText = "Maximilianstraße, München";
+                document.getElementById('search-input-placeholder').innerText = "bestes steakhaus in der nähe";
+                document.getElementById('seo-result-title').innerHTML = "Rustiqe Restaurant &amp; Steak House - München";
+                document.getElementById('seo-result-snippet').innerHTML = "...Genießen Sie Premium-Fleisch. Unser <strong class='text-white'>Rustiqe Ribeye Steak</strong> für 18.50 € wird nach traditionellem Rezept zubereitet... Finden Sie unsere Speisekarte auf pricelist.digital.";
+                document.getElementById('mockup-price-1').innerText = "18.50 €";
+                document.getElementById('mockup-price-2').innerText = "12.00 €";
+                document.getElementById('mockup-price-3').innerText = "4.50 €";
+                document.getElementById('hero-title').innerHTML = `Ihre Preisliste auf der <br class="hidden sm:inline"><span class="gradient-text py-2">ersten Seite von Google</span>`;
+                document.getElementById('search-title-heading').innerHTML = `Ihr Angebot ist bei Google Suchen unsichtbar. <br><span class="gradient-text py-1">Es ist Zeit, das zu ändern.</span>`;
+                
+                // Set domain generator defaults
+                document.getElementById('sim-biz-city').value = "München";
+            } else if (lang === 'sl') {
+                document.getElementById('mockup-address').innerText = "Slovenska cesta, Ljubljana";
+                document.getElementById('search-input-placeholder').innerText = "najboljša restavracija s steaki v bližini";
+                document.getElementById('seo-result-title').innerHTML = "Rustiqe Restaurant &amp; Steak House - Ljubljana";
+                document.getElementById('seo-result-snippet').innerHTML = "...Uživajte v vrhunskih kosih mesa. Naš <strong class='text-white'>Rustiqe Ribeye Steak</strong> za 18.50 € je pripravljen po tradicionalnem receptu... Najdite naš celoten meni na našem digitalnem ceniku.";
+                document.getElementById('mockup-price-1').innerText = "18.50 €";
+                document.getElementById('mockup-price-2').innerText = "12.00 €";
+                document.getElementById('mockup-price-3').innerText = "4.50 €";
+                document.getElementById('hero-title').innerHTML = `Vaš cenik na <br class="hidden sm:inline"><span class="gradient-text py-2">prvi strani Googla</span>`;
+                document.getElementById('search-title-heading').innerHTML = `Vaša ponudba je nevidna pri iskanju. <br><span class="gradient-text py-1">Čas je, da to spremenimo.</span>`;
+                
+                // Set domain generator defaults
+                document.getElementById('sim-biz-city').value = "Ljubljana";
+            }
+
+            // 4. Regenerate FAQs dynamically
+            const fContainer = document.getElementById('faq-container');
+            if (fContainer) {
+                fContainer.innerHTML = '';
+                faqData[lang].forEach((faq) => {
+                    fContainer.innerHTML += `
+                    <div class="bg-darkcard border border-gray-800 rounded-xl overflow-hidden transition duration-150">
+                        <button class="w-full text-left p-5 flex items-center justify-between font-bold text-white text-base hover:bg-gray-900/40" onclick="toggleFAQ(this)">
+                            <span>${faq.q}</span>
+                            <span class="text-brand-400 text-xl font-bold transition-transform">+</span>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-300">
+                            <p class="p-5 text-sm text-gray-400 border-t border-gray-800/60 leading-relaxed">${faq.a}</p>
+                        </div>
+                    </div>`;
+                });
+            }
+
+            // 5. Update interactive suggests domain structure
+            generateDomainSuggestions();
+
+            // 6. Recalculate dynamic totals in current language currency
+            updatePriceCalculator();
+        }
+
+        // Interactive Domain Suggestions generator logic
+        function generateDomainSuggestions() {
+            const bizName = document.getElementById('sim-biz-name').value.trim() || 'Bella Vista';
+            const city = document.getElementById('sim-biz-city').value.trim() || (currentLang === 'en' ? 'Manchester' : (currentLang === 'de' ? 'München' : 'Ljubljana'));
+            const bizType = document.getElementById('sim-biz-type').value;
+
+            // Normalize strings to create domains
+            const cleanBiz = bizName.toLowerCase().replace(/[^a-z0-9]/g, '');
+            const cleanCity = city.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+            const ext = currentLang === 'en' ? 'co.uk' : (currentLang === 'de' ? 'de' : 'si');
+            let seoDomain = '';
+            let brandDomain = `${cleanBiz}.${ext}`;
+
+            switch(bizType) {
+                case 'restoran':
+                    seoDomain = `restaurant${cleanBiz}${cleanCity}.${ext}`;
+                    break;
+                case 'salon':
+                    seoDomain = currentLang === 'en' ? `beautysalon${cleanBiz}${cleanCity}.${ext}` : (currentLang === 'de' ? `friseur${cleanBiz}${cleanCity}.${ext}` : `frizerskisalon${cleanBiz}${cleanCity}.${ext}`);
+                    break;
+                case 'bar':
+                    seoDomain = `cafebar${cleanBiz}${cleanCity}.${ext}`;
+                    break;
+                case 'dental':
+                    seoDomain = currentLang === 'en' ? `dentist${cleanBiz}${cleanCity}.${ext}` : (currentLang === 'de' ? `zahnarzt${cleanBiz}${cleanCity}.${ext}` : `zobozdravnik${cleanBiz}${cleanCity}.${ext}`);
+                    break;
+                default:
+                    seoDomain = `${cleanBiz}${cleanCity}.${ext}`;
+            }
+
+            document.getElementById('brand-domain-output').innerText = brandDomain;
+            document.getElementById('seo-domain-output').innerText = seoDomain;
+        }
+
+        // Pricing Calculator Logic
+        let currentTotalPrice = 199;
+
+        // Update total dynamic price across calculation card and lead form
+        function updatePriceCalculator() {
+            let base = 199;
+            const hasGbp = document.getElementById('addon-gbp').checked;
+            const hasNfc = document.getElementById('addon-nfc').checked;
+            const hasApp = document.getElementById('addon-app').checked;
+
+            const itemGbp = document.getElementById('itemized-gbp');
+            const itemNfc = document.getElementById('itemized-nfc');
+            const itemApp = document.getElementById('itemized-app');
+
+            // Update hidden inputs for Google Form submission
+            document.getElementById('form-addon-gbp').value = hasGbp ? "Da" : "Ne";
+            document.getElementById('form-addon-nfc').value = hasNfc ? "Da" : "Ne";
+            document.getElementById('form-addon-app').value = hasApp ? "Da" : "Ne";
+
+            if (hasGbp) {
+                base += 99;
+                itemGbp.classList.remove('hidden');
+            } else {
+                itemGbp.classList.add('hidden');
+            }
+
+            if (hasNfc) {
+                base += 49;
+                itemNfc.classList.remove('hidden');
+            } else {
+                itemNfc.classList.add('hidden');
+            }
+
+            if (hasApp) {
+                base += 149;
+                itemApp.classList.remove('hidden');
+            } else {
+                itemApp.classList.add('hidden');
+            }
+
+            currentTotalPrice = base;
+            const pr = prices[currentLang];
+            document.getElementById('live-total-price').innerText = `${pr.currency}${base}`;
+            document.getElementById('form-total-display').innerText = `${pr.currency}${base}`;
+            document.getElementById('form-total-price-hidden').value = `${pr.currency}${base}`;
+        }
+
+        function populateFormFromCalculator() {
+            // Auto scroll to form and transfer dynamic calculated values
+            const pr = prices[currentLang];
+            document.getElementById('form-total-display').innerText = `${pr.currency}${currentTotalPrice}`;
+            document.getElementById('form-total-price-hidden').value = `${pr.currency}${currentTotalPrice}`;
+            const bizNameSim = document.getElementById('sim-biz-name').value;
+            if (bizNameSim) {
+                document.getElementById('form-biz-name').value = bizNameSim;
+            }
+        }
+
+        // Custom Form submit helper (Handles native validations before setting state)
+        function handleFormSubmit(event) {
+            const name = document.getElementById('form-name').value;
+            const email = document.getElementById('form-email').value;
+            const bizName = document.getElementById('form-biz-name').value;
+
+            if (name && email && bizName) {
+                // Validation passed, allow the submission through the background iframe
+                submitted = true;
+            } else {
+                event.preventDefault();
+            }
+        }
+
+        // Close custom modal and reset
+        function closeToast() {
+            document.getElementById('toast').classList.add('hidden');
+        }
+
+        // FAQ accordion toggle mechanics
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('span:last-child');
+            
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0px';
+                icon.innerText = '+';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // close all other FAQs first for clean experience
+                const allFaqs = document.querySelectorAll('#faq .max-h-0, #faq div[style*="max-height"]');
+                allFaqs.forEach(faq => {
+                    faq.style.maxHeight = '0px';
+                    const prevBtn = faq.previousElementSibling;
+                    if (prevBtn) {
+                        const prevIcon = prevBtn.querySelector('span:last-child');
+                        if (prevIcon) {
+                            prevIcon.innerText = '+';
+                            prevIcon.style.transform = 'rotate(0deg)';
+                        }
+                    }
+                });
+
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.innerText = '−';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Run initial generator on load to have values on screen and bind iframe
+        window.onload = function() {
+            // Set EN as default on boot
+            changeLanguage('en');
+
+            // Bind hidden iframe load event dynamically to prevent early inline onload ReferenceErrors
+            const iframe = document.getElementById('hidden_iframe');
+            if (iframe) {
+                iframe.addEventListener('load', function() {
+                    if (submitted) {
+                        handleFormSuccess();
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
