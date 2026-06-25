@@ -705,7 +705,7 @@
                 <p data-translate="proven_subtitle" class="text-gray-400 mt-4 text-base">We've helped businesses transform their digital presence. Click the links below to test the speed and responsiveness.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- namastewien.com -->
                 <div class="bg-darkcard rounded-2xl border border-gray-800/80 p-6 flex flex-col justify-between hover:scale-[1.02] transition duration-300">
                     <div>
@@ -756,6 +756,24 @@
                         <a href="https://rustiqe.online" target="_blank" class="text-xs text-brand-400 font-bold hover:underline flex items-center gap-1">
                             <span data-translate="proven_card_1_visit">Visit website</span>
                             <svg class="w-3.5 h-3.5 inline-block" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- restorandoboj.com -->
+                <div class="bg-darkcard rounded-2xl border border-gray-800/80 p-6 flex flex-col justify-between hover:scale-[1.02] transition duration-300">
+                    <div>
+                        <div data-translate="proven_card_4_type" class="text-xs text-brand-400 font-semibold mb-2">Restaurant / Doboj</div>
+                        <h4 class="text-xl font-bold text-white mb-2">restorandoboj.com</h4>
+                        <p data-translate="proven_card_4_desc" class="text-xs text-gray-400 leading-relaxed">
+                            SEO-focused restaurant example for Doboj: fast domain, clear digital menu, and local keywords that help guests find the offer directly through Google search.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400">Live Example</span>
+                        <a href="https://restorandoboj.com" target="_blank" rel="noopener noreferrer" class="text-xs text-brand-400 font-bold hover:underline flex items-center gap-1">
+                            <span data-translate="proven_card_1_visit">Visit website</span>
+                            <svg class="w-3.5 h-3.5 inline-block" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
                     </div>
                 </div>
@@ -1240,6 +1258,8 @@
                 proven_card_2_desc: "A complete wine list and beverage selection integrated onto their Google Profile in Doboj, making it easy for customers on the street to find their offerings.",
                 proven_card_3_type: "Restaurant & Grill",
                 proven_card_3_desc: "A fully loaded menu on a lightning-fast custom domain for a restaurant in Doboj. Every dish is fully indexed and perfectly optimized for mobile.",
+                proven_card_4_type: "Restaurant / Doboj",
+                proven_card_4_desc: "SEO-focused restaurant example for Doboj: fast domain, clear digital menu, and local keywords that help guests find the offer directly through Google search.",
                 process_badge: "Simple Process",
                 process_title: "Your digital pricelist in 3 easy steps",
                 process_subtitle: "We've completely simplified the launch process to save your precious business hours.",
@@ -1412,6 +1432,8 @@
                 proven_card_2_desc: "Eine komplette Weinkarte und Getränkeauswahl, integriert in ihr Google-Profil in Doboj, sodass Kunden auf der Straße ihre Angebote leicht finden können.",
                 proven_card_3_type: "Restaurant & Grill",
                 proven_card_3_desc: "Eine voll ausgestattete Speisekarte auf einer blitzschnellen benutzerdefinierten Domain für ein Restaurant in Doboj. Jedes Gericht ist vollständig indexiert und perfekt für Mobilgeräte optimiert.",
+                proven_card_4_type: "Restaurant / Doboj",
+                proven_card_4_desc: "SEO-fokussiertes Restaurant-Beispiel für Doboj: schnelle Domain, klares digitales Menü und lokale Keywords, damit Gäste das Angebot direkt über Google finden.",
                 process_badge: "Einfacher Ablauf",
                 process_title: "Ihre digitale Preisliste in 3 einfachen Schritten",
                 process_subtitle: "Wir haben den Startprozess komplett vereinfacht, um Ihnen wertvolle Arbeitsstunden zu sparen.",
@@ -1584,6 +1606,8 @@
                 proven_card_2_desc: "Celoten vinski list in izbor pijač, integriran v njihov Google profil v Doboju, kar strankam na ulici olajša iskanje njihove ponudbe.",
                 proven_card_3_type: "Restavracija in žar",
                 proven_card_3_desc: "Polno naložen meni na bliskovito hitri lastni domeni za restavracijo v Doboju. Vsaka jed je v celoti indeksirana in popolnoma optimizirana za mobilne naprave.",
+                proven_card_4_type: "Restavracija / Doboj",
+                proven_card_4_desc: "SEO-usmerjen primer restavracije v Doboju: hitra domena, jasen digitalni meni in lokalne ključne besede, ki gostom pomagajo najti ponudbo prek Googla.",
                 process_badge: "Enostaven postopek",
                 process_title: "Vaš digitalni cenik v 3 preprostih korakih",
                 process_subtitle: "Popolnoma smo poenostavili postopek lansiranja, da vam prihranimo dragocene delovne ure.",
@@ -1731,9 +1755,9 @@
         };
 
         const siteOverrides = {
-            tr: { nav_why: "Neden Dijital?", nav_how: "Nasıl çalışır", nav_clients: "Müşteriler", nav_pricing: "Fiyatlar", nav_faq: "SSS", btn_create_header: "Şimdi Başlat", hero_badge: "Google Business Profile ile tam entegrasyon", hero_subtitle: "Kağıt veya yavaş PDF menünüzü hızlı, SEO uyumlu bir dijital fiyat listesine dönüştürün.", hero_proof_1: "Aylık abonelik yok", hero_proof_2: "48 saatte teslim", hero_proof_3_prefix: "Tek sefer", hero_cta: "Projeyi Başlat", hero_learn: "Detaylar", pricing_badge: "Şeffaf fiyatlandırma", pricing_title: "Basit fiyatlar, gizli abonelik yok", pricing_card_right_title: "Toplam maliyet", pricing_card_right_subs: "Tek seferlik ödeme. Sözleşme veya aylık ücret yok.", pricing_card_right_cta: "Siparişe Geç", footer_pricing: "Fiyatlar" },
-            sr: { nav_why: "Zašto digitalno?", nav_how: "Kako radi", nav_clients: "Klijenti", nav_pricing: "Cene", nav_faq: "FAQ", btn_create_header: "Kreiraj sada", hero_badge: "Puna integracija sa Google Business profilom", hero_subtitle: "Pretvorite papirni ili spori PDF meni u brz, SEO-optimizovan digitalni cenovnik.", hero_proof_1: "Bez mesečne pretplate", hero_proof_2: "Isporuka za 48 sati", hero_proof_3_prefix: "Jednokratno", hero_cta: "Pokreni projekat", hero_learn: "Saznaj više", pricing_badge: "Transparentne cene", pricing_title: "Jednostavne cene, bez skrivenih pretplata", pricing_card_right_title: "Ukupna cena", pricing_card_right_subs: "Jednokratno plaćanje. Bez ugovora i mesečnih troškova.", pricing_card_right_cta: "Pređi na porudžbinu", footer_pricing: "Cene" },
-            mk: { nav_why: "Зошто дигитално?", nav_how: "Како работи", nav_clients: "Клиенти", nav_pricing: "Цени", nav_faq: "FAQ", btn_create_header: "Креирај сега", hero_badge: "Целосна интеграција со Google Business профил", hero_subtitle: "Претворете го хартиеното или бавно PDF мени во брз, SEO-оптимизиран дигитален ценовник.", hero_proof_1: "Без месечна претплата", hero_proof_2: "Испорака за 48 часа", hero_proof_3_prefix: "Еднократно", hero_cta: "Започни проект", hero_learn: "Дознај повеќе", pricing_badge: "Транспарентни цени", pricing_title: "Едноставни цени, без скриени претплати", pricing_card_right_title: "Вкупна цена", pricing_card_right_subs: "Еднократно плаќање. Без договор и месечни трошоци.", pricing_card_right_cta: "Продолжи кон нарачка", footer_pricing: "Цени" }
+            tr: { nav_why: "Neden Dijital?", nav_how: "Nasıl çalışır", nav_clients: "Müşteriler", nav_pricing: "Fiyatlar", nav_faq: "SSS", btn_create_header: "Şimdi Başlat", hero_badge: "Google Business Profile ile tam entegrasyon", hero_subtitle: "Kağıt veya yavaş PDF menünüzü hızlı, SEO uyumlu bir dijital fiyat listesine dönüştürün.", hero_proof_1: "Aylık abonelik yok", hero_proof_2: "48 saatte teslim", hero_proof_3_prefix: "Tek sefer", hero_cta: "Projeyi Başlat", hero_learn: "Detaylar", pricing_badge: "Şeffaf fiyatlandırma", pricing_title: "Basit fiyatlar, gizli abonelik yok", pricing_card_right_title: "Toplam maliyet", pricing_card_right_subs: "Tek seferlik ödeme. Sözleşme veya aylık ücret yok.", pricing_card_right_cta: "Siparişe Geç", footer_pricing: "Fiyatlar", proven_card_4_type: "Restoran / Doboj", proven_card_4_desc: "Doboj için SEO odaklı restoran örneği: hızlı alan adı, net dijital menü ve misafirlerin teklifi Google aramasında bulmasına yardımcı olan yerel anahtar kelimeler." },
+            sr: { nav_why: "Zašto digitalno?", nav_how: "Kako radi", nav_clients: "Klijenti", nav_pricing: "Cene", nav_faq: "FAQ", btn_create_header: "Kreiraj sada", hero_badge: "Puna integracija sa Google Business profilom", hero_subtitle: "Pretvorite papirni ili spori PDF meni u brz, SEO-optimizovan digitalni cenovnik.", hero_proof_1: "Bez mesečne pretplate", hero_proof_2: "Isporuka za 48 sati", hero_proof_3_prefix: "Jednokratno", hero_cta: "Pokreni projekat", hero_learn: "Saznaj više", pricing_badge: "Transparentne cene", pricing_title: "Jednostavne cene, bez skrivenih pretplata", pricing_card_right_title: "Ukupna cena", pricing_card_right_subs: "Jednokratno plaćanje. Bez ugovora i mesečnih troškova.", pricing_card_right_cta: "Pređi na porudžbinu", footer_pricing: "Cene", proven_card_4_type: "Restoran / Doboj", proven_card_4_desc: "SEO-orijentisan primjer za restoran u Doboju: brza domena, jasan digitalni meni i lokalne ključne riječi koje pomažu gostima da ponudu pronađu direktno preko Google pretrage." },
+            mk: { nav_why: "Зошто дигитално?", nav_how: "Како работи", nav_clients: "Клиенти", nav_pricing: "Цени", nav_faq: "FAQ", btn_create_header: "Креирај сега", hero_badge: "Целосна интеграција со Google Business профил", hero_subtitle: "Претворете го хартиеното или бавно PDF мени во брз, SEO-оптимизиран дигитален ценовник.", hero_proof_1: "Без месечна претплата", hero_proof_2: "Испорака за 48 часа", hero_proof_3_prefix: "Еднократно", hero_cta: "Започни проект", hero_learn: "Дознај повеќе", pricing_badge: "Транспарентни цени", pricing_title: "Едноставни цени, без скриени претплати", pricing_card_right_title: "Вкупна цена", pricing_card_right_subs: "Еднократно плаќање. Без договор и месечни трошоци.", pricing_card_right_cta: "Продолжи кон нарачка", footer_pricing: "Цени", proven_card_4_type: "Ресторан / Добој", proven_card_4_desc: "SEO-ориентиран пример за ресторан во Добој: брза домена, јасно дигитално мени и локални клучни зборови што им помагаат на гостите да ја најдат понудата преку Google." }
         };
         Object.keys(siteOverrides).forEach(lang => { translations[lang] = { ...translations.en, ...siteOverrides[lang] }; });
 
